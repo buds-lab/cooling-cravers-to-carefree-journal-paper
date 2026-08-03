@@ -1,0 +1,18 @@
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.spl
+*.toc
+*.lof
+*.lot
+
+# Editor / OS artefacts
+.DS_Store
+.ipynb_checkpoints/

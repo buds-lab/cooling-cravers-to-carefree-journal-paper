@@ -1,0 +1,283 @@
+% Same Heat, Different Preference
+% Target journal: Building and Environment (Elsevier)
+% Draft layout: Elsevier 5p final production-style two-column format with numeric citations.
+%
+% This file retains the key Elsevier front-matter environments for abstract,
+% graphical abstract, highlights, and keywords. Populate author metadata and
+% submission statements only after the authors have agreed the final wording.
+
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+
+% -----------------------------------------------------------------------------
+% Packages and layout
+% -----------------------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage{lineno}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lipsum}
+
+% Keep figures and tables near their first discussion while allowing LaTeX
+% enough flexibility to build well-balanced pages.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.75}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+
+% Optional during journal submission/review:
+% \linenumbers
+
+\journal{Building and Environment}
+
+\begin{document}
+
+\begin{frontmatter}
+
+% TODO(author): Finalize the title after agreeing the central framing.
+\title{Same Heat, Different Preference: Behavioural Thermal Archetypes From Longitudinal Smartwatch Micro-Surveys}
+
+% TODO(author): Confirm the author list, affiliations, corresponding author, and emails.
+\author[smu]{Clayton Miller\corref{corresponding}}
+\cortext[corresponding]{Corresponding author}
+\ead{TODO(author): corresponding.email@example.edu}
+
+\affiliation[smu]{organization={Singapore Management University},
+             addressline={TODO(author): department or school},
+             city={Singapore},
+             postcode={TODO(author): postal code},
+             country={Singapore}}
+
+\begin{abstract}
+% TODO(author): Write a single-paragraph abstract after the final figures and
+% numerical results have been selected. It should cover motivation; the Cozie
+% Singapore deployment and analytical sample; the person-level feature and
+% clustering approach; selected, verified findings; and design implications.
+\textit{Placeholder abstract.} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at lacus vitae neque aliquam posuere. Sed non arcu in nisl consequat sagittis; this text is included only to preview the production-style layout and will be replaced with the verified study abstract.
+\end{abstract}
+
+% Elsevier may request a graphical abstract as a separate file at submission.
+% Keep the environment so the manuscript source retains the template structure.
+% \begin{graphicalabstract}
+% % \includegraphics[width=\textwidth]{figures/graphical_abstract.pdf}
+% \end{graphicalabstract}
+
+% \begin{highlights}
+% \item TODO(author): State the dataset and participant-level behavioural-typology contribution.
+% \item TODO(author): State the verified heat and environmental-control finding.
+% \item TODO(author): State the built-environment or thermal-comfort implication without overstating causality.
+% \end{highlights}
+
+\begin{keyword}
+thermal comfort \sep thermal preference \sep personal comfort \sep wearable sensing \sep ecological momentary assessment \sep behavioural archetypes
+\end{keyword}
+
+\end{frontmatter}
+
+% =============================================================================
+\section{Introduction}\label{sec:introduction}
+% =============================================================================
+
+% Suggested argument, to be authored and supported with citations:
+% (1) the same ambient conditions can produce heterogeneous comfort judgements;
+% (2) the field needs longitudinal, person-centered evidence that separates
+% behavioural response from exposure and environmental control; (3) smartwatch
+% micro-surveys provide the necessary repeated in-situ observations; and
+% (4) this study develops and scrutinizes a descriptive four-archetype typology.
+%
+% TODO(author): Establish the Building and Environment contribution, distinguish
+% this paper from the companion Cozie Singapore space-characterization paper and
+% the JITAI intervention paper, then state focused research questions.
+
+\subsection{Thermal Preference Varies Between People Under Similar Conditions}\label{sec:individual-differences}
+% TODO(author): Review adaptive comfort, personal comfort models, expectations,
+% alliesthesia, and over-cooling literature.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae libero quis
+nibh luctus feugiat. Repeated in-situ reporting provides one route to observing
+how thermal preference changes with context and time \cite{Stone1994-he}.
+
+\subsection{Repeated In-Situ Data Can Reveal Behavioural Response Patterns}\label{sec:longitudinal-data}
+% TODO(author): Position ecological momentary assessment and wearable sensing.
+\lipsum[1]
+
+\subsection{Study Aim And Research Questions}\label{sec:aims}
+% TODO(author): State the final research questions. A defensible structure is:
+% RQ1: Can repeated thermal-preference responses form interpretable person-level
+%      behavioural archetypes?
+% RQ2: Do archetypes differ in heat dose-response and control-context response?
+% RQ3: How robust are the archetypal signatures and memberships?
+
+% =============================================================================
+\section{Methods}\label{sec:methods}
+% =============================================================================
+
+\subsection{Study Design, Cohort, And Data Source}\label{sec:data-source}
+% TODO(author): Describe the Cozie Singapore smartwatch deployment, ethics,
+% consent, time period, response count, participant count, and public
+% privacy-protected dataset. Cite the platform and companion dataset paper.
+\lipsum[2]
+
+\subsection{Survey Measures, Outdoor Heat, And Environmental-Control Context}\label{sec:measures}
+% TODO(author): Define thermal preference (Cooler / No change / Warmer), the
+% one-hour mean outdoor heat index, location categories, and the a-priori
+% contextual grouping: Outdoor; Personal (Home); Likely A/C
+% (Office/Class/Transit); and Other indoor. Explain that outdoor weather is an
+% exposure proxy rather than a measurement of individual microclimate.
+
+\subsection{Participant Eligibility And Person-Level Features}\label{sec:features}
+% TODO(author): Document the all-location eligibility screen (minimum total,
+% hot-side, and cool-side observations); empirical-Bayes Beta--Binomial
+% shrinkage for P(Cooler) and P(Warmer); and unshrunk within-participant heat
+% sensitivity P(Cooler | hot) - P(Cooler | cool). Define the heat split using
+% the observed cohort median and give all quantities from executed output.
+\lipsum[3]
+
+\subsection{Archetype Discovery And Interpretation}\label{sec:clustering}
+% TODO(author): Specify standardization, k-means, candidate K range, silhouette
+% evaluation, and the explicit interpretability decision to carry K=4 forward.
+% Explain transparent post-hoc labels: Unconditional Coolers, Over-Cooled
+% Captives, Weather Responders, and Heat-Unbothered. Emphasize that labels are
+% descriptive and that membership is expected to be soft at boundaries.
+
+\subsection{Mechanistic Scrutiny And Robustness Checks}\label{sec:scrutiny}
+% TODO(author): Pre-specify / describe the following analyses:
+% - dose-response of P(Cooler) and P(No change) over outdoor-heat sextiles;
+% - P(Warmer) by control context and the Likely-A/C minus Outdoor gradient;
+% - heat tolerance versus outdoor exposure;
+% - A/C relief across Outdoor and Likely-A/C contexts;
+% - participant-cluster bootstrap CIs, seed/subsample stability, alternative
+%   heat-threshold agreement, and pairwise Cliff's delta signature contrasts.
+% Make clear that survey observations are participant-nested and all inference
+% is descriptive/associational rather than causal.
+
+\subsection{Software And Reproducibility}\label{sec:reproducibility}
+% TODO(author): Cite the public repository/data release and name the two source
+% notebooks in 6_analysis_humans. State versions only after freezing the build.
+
+% =============================================================================
+\section{Results}\label{sec:results}
+% =============================================================================
+
+\subsection{Cohort Coverage And Thermal-Preference Context}\label{sec:cohort-results}
+% TODO(author): Report executed descriptive results and use a compact initial
+% figure/table to establish response coverage, preference mix, space mix, and
+% outdoor-heat distribution.
+\lipsum[4]
+
+% Suggested asset (add after regeneration):
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/cohort_coverage_and_context.pdf}
+%   \caption{TODO(author): self-contained caption with panel positions, sample
+%   definition, units, and any data-exclusion note.}
+%   \label{fig:cohort-context}
+% \end{figure}
+
+\subsection{Four Behavioural Thermal Archetypes}\label{sec:archetype-results}
+% TODO(author): Present qualification, candidate-K silhouette results, cluster
+% separation, group size, and standardized feature signatures. State the small
+% K=3 versus K=4 silhouette difference accurately; do not describe K=4 as an
+% objectively optimal solution.
+\lipsum[5]
+
+% \input{tables/archetype_profiles.tex}
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/archetype_solution.pdf}
+%   \caption{TODO(author): self-contained caption.}
+%   \label{fig:archetype-solution}
+% \end{figure}
+
+\subsection{Heat Dose-Response And Environmental-Control Context}\label{sec:mechanistic-results}
+% TODO(author): Present the mechanistic scrutiny in a coherent order: heat
+% dose-response, over-cooling anatomy, tolerance versus exposure, and A/C
+% relief. Give uncertainty and effect sizes from the executed notebook outputs.
+
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/archetype_mechanistic_scrutiny.pdf}
+%   \caption{TODO(author): self-contained caption.}
+%   \label{fig:mechanistic-scrutiny}
+% \end{figure}
+
+\subsection{Robustness And Boundary Membership}\label{sec:robustness-results}
+% TODO(author): Report strong signature separation alongside the observed
+% seed/subsample/threshold stability results. Interpret these as support for a
+% descriptive continuum discretized into useful archetypes, not a deterministic
+% classifier for new individuals.
+
+% =============================================================================
+\section{Discussion}\label{sec:discussion}
+% =============================================================================
+
+\subsection{What The Archetypes Add To Thermal-Comfort Research}\label{sec:contribution}
+% TODO(author): Connect each archetype to the field without reifying the labels
+% or assigning traits/causes that were not measured.
+\lipsum[6]
+
+\subsection{Implications For Buildings, Controls, And Personalization}\label{sec:implications}
+% TODO(author): Discuss design and operation implications at the appropriate
+% evidence level. Separate observations about likely A/C contexts from causal
+% claims about air-conditioning operation.
+
+\subsection{Strengths And Limitations}\label{sec:limitations}
+% TODO(author): Address the Singapore cohort, self-selected participants,
+% participant-nested observations, weather-as-proxy limitation, location-context
+% assumptions, response imbalance, post-hoc cluster naming, and soft membership.
+
+\subsection{Future Work}\label{sec:future-work}
+% TODO(author): Consider replication in other climates/cohorts, independent
+% validation, direct indoor environmental measurements, longitudinal change in
+% preferences, and designs that can evaluate causal control interventions.
+
+% =============================================================================
+\section{Conclusions}\label{sec:conclusions}
+% =============================================================================
+% TODO(author): Concisely restate the dataset, typology, verified headline
+% patterns, and the calibrated implication for personal thermal comfort and
+% built-environment design.
+
+% =============================================================================
+\section*{CRediT Authorship Contribution Statement}
+\lipsum[7]
+
+% =============================================================================
+\section*{CRediT Authorship Contribution Statement}
+% =============================================================================
+% TODO(author): Replace with the final contributor roles agreed by all authors.
+\textit{CRediT roles to be finalized by the authors.}
+
+\section*{Declaration Of Competing Interest}
+% TODO(author): Replace with the final journal-compliant declaration.
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+\section*{Acknowledgments}
+% TODO(author): Add funders, institutional support, data-collection collaborators,
+% and any required grant identifiers after confirming their wording.
+
+\section*{Data Availability}
+% TODO(author): Replace with the persistent public dataset/repository DOI or URL
+% at the point of submission. Do not include private participant information.
+The data and analysis materials will be made available in the associated public repository, subject to the privacy protections described in the accompanying data documentation.
+
+\section*{Declaration Of Generative AI And AI-Assisted Technologies In The Writing Process}
+% TODO(author): Retain, revise, or remove to match Elsevier's current declaration
+% policy at submission and the authors' actual use.
+During the preparation of this work, the authors used generative AI tools to assist with organizing and polishing manuscript source files. The authors reviewed and edited all content and take full responsibility for the final manuscript.
+
+\appendix
+\section{Supplementary Methods And Robustness Detail}\label{app:methods}
+% TODO(author): Move expanded technical material here only if it supports the
+% main text and is not better supplied as separate supplementary material.
+
+\bibliographystyle{elsarticle-num}
+\bibliography{shdd}
+
+\end{document}
