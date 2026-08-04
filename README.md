@@ -16,8 +16,8 @@ The analysis uses the public, privacy-protected survey dataset maintained in the
 ## Repository Layout
 
 ```text
-shdd.tex     # Main Elsevier / Building and Environment manuscript
-shdd.bib     # Working numeric bibliography (seeded from Cozie Singapore)
+cravers-to-carefree.tex     # Main Elsevier / Building and Environment manuscript
+cravers-to-carefree.bib     # Working numeric bibliography (seeded from Cozie Singapore)
 figures/                               # Regenerated manuscript-ready figure assets
 tables/                                # LaTeX tables included by the manuscript
 elsarticle.cls                         # Elsevier document class supplied with the template
@@ -27,7 +27,7 @@ elsarticle-num.bst                     # Numeric Elsevier bibliography style
 ## Build
 
 ```bash
-latexmk -pdf shdd.tex
+latexmk -pdf cravers-to-carefree.tex
 ```
 
 The main file uses Elsevier's `final,5p,times,twocolumn` production-style layout with numeric citations. Placeholder text is included only to preview the layout and must be replaced before submission.
