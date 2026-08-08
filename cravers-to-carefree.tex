@@ -44,7 +44,7 @@
 % TODO(author): Finalize the title after agreeing the central framing.
 % \title{Same Heat, Different Preference: Behavioural Thermal Archetypes From Longitudinal Smartwatch Micro-Surveys}
 
-\title{Cooling cravers to the carefree: Four behavioral archetypes of thermal preference from city-scale longitudinal smartwatch micro-surveys}
+\title{Cooling cravers to the carefree: Behavioral archetypes of thermal preference from city-scale longitudinal smartwatch micro-surveys}
 
 % TODO(author): Confirm the author list, affiliations, corresponding author, and emails.
 \author[smu]{Clayton Miller\corref{corresponding}}
@@ -98,7 +98,17 @@ thermal comfort \sep thermal preference \sep personal comfort \sep wearable sens
 % this paper from the companion Cozie Singapore space-characterization paper and
 % the JITAI intervention paper, then state focused research questions.
 
-\subsection{Thermal preference varies between people under similar conditions}\label{sec:individual-differences}
+% Full-width motivating schematic of the many elements shaping thermal preference.
+% NOTE(author): draft caption below — please review/refine wording and weave an
+% in-text reference to Fig.~\ref{fig:thermal-preference-elements} into the prose.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/thermal_preference_elements_v15_190mm_1.pdf}
+  \caption{Elements shaping individual thermal preference. The left side groups physical, environmental, and physiological factors around a seated occupant: the surrounding radiant, air-movement, and surface conditions; near-body heat sources, clothing insulation, posture, and physical activity; and physiological state such as skin temperature, perspiration, metabolic rate, hydration, sleep and circadian phase, acclimatization, and thermoregulation. The right side lists psychological, cultural, economic, and historical or institutional factors, ranging from expectation, perceived control, and behavioral adjustment, to dress conventions and regional comfort norms, energy prices and who pays the bill, and colonial design, regulatory, and infrastructural legacies. Together these illustrate why identical ambient conditions can produce heterogeneous thermal-preference responses across individuals.}
+  \label{fig:thermal-preference-elements}
+\end{figure*}
+
+\subsection{Thermal comfort varies between people under similar conditions}\label{sec:individual-differences}
 % TODO(author): Review adaptive comfort, personal comfort models, expectations,
 % alliesthesia, and over-cooling literature.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae libero quis
@@ -107,7 +117,7 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 
 \subsection{Repeated in-situ data can reveal behavioral response patterns}\label{sec:longitudinal-data}
 % TODO(author): Position ecological momentary assessment and wearable sensing.
-\lipsum[2-3]
+\lipsum[2-4]
 
 % TODO(author): State the final research questions. A defensible structure is:
 % RQ1: Can repeated thermal-preference responses form interpretable person-level
@@ -119,25 +129,27 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 \section{Methods}\label{sec:methods}
 % =============================================================================
 
+
 \subsection{Study design, cohort, and data source}\label{sec:data-source}
 % TODO(author): Describe the Cozie Singapore smartwatch deployment, ethics,
 % consent, time period, response count, participant count, and public
 % privacy-protected dataset. Cite the platform and companion dataset paper.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\columnwidth]{figures/cozie-diagram.pdf}
+  \includegraphics[width=\columnwidth]{figures/cozie_diagram.pdf}
   \caption{Cozie smartwatch micro-survey interface. The thermal-preference question offers Cooler, No change, and Warmer responses; the accompanying location question records the space category at the time of response.}
   \label{fig:cozie-interface}
 \end{figure}
-\lipsum[4-5]
+\lipsum[5-7]
 
 \subsection{Survey measures, outdoor heat, and environmental-control context}\label{sec:measures}
 % TODO(author): Define thermal preference (Cooler / No change / Warmer), the
 % one-hour mean outdoor heat index, location categories, and the a-priori
-% contextual grouping: Outdoor; Personal (Home); Likely A/C
-% (Office/Class/Transit); and Other indoor. Explain that outdoor weather is an
-% exposure proxy rather than a measurement of individual microclimate.
-\lipsum[6-7]
+% contextual grouping by air-conditioning likelihood: Outdoor (No A/C);
+% Home (Maybe A/C); Office/Class/Other (Likely A/C); and Transport
+% (Very Likely A/C). Explain that outdoor weather is an exposure proxy rather
+% than a measurement of individual microclimate.
+\lipsum[8-10]
 
 
 \subsection{Participant eligibility and person-level features}\label{sec:features}
@@ -146,23 +158,16 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 % shrinkage for P(Cooler) and P(Warmer); and unshrunk within-participant heat
 % sensitivity P(Cooler | hot) - P(Cooler | cool). Define the heat split using
 % the observed cohort median and give all quantities from executed output.
-\lipsum[8-9]
-
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=\textwidth]{figures/00_A2_preference_and_space_mix.pdf}
-  \caption{Survey composition. The left panel shows the overall thermal-preference mix and the right panel shows the distribution of survey responses across recorded space types.}
-  \label{fig:preference-space-mix}
-\end{figure*}
-\lipsum[10]
+\lipsum[11-13]
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\columnwidth]{figures/00_A3_preference_by_space.pdf}
-  \caption{Thermal-preference responses by recorded space type. Stacked bars show the share of surveys indicating Prefer Cooler, No Change, or Prefer Warmer within each space type.}
-  \label{fig:preference-by-space}
+  \includegraphics[width=\columnwidth]{figures/00_A2_preference_mix_and_by_space.pdf}
+  \caption{Survey composition and thermal preference by space type. Top panel: the overall thermal-preference mix as the number of surveys in each category (Prefer Cooler, No Change, Prefer Warmer), with each category's share of all surveys labeled above its bar. Middle panel: the number of surveys recorded in each space type, with each type's share of all surveys labeled at the end of its bar. Bottom panel: within each space type, the share of surveys indicating Prefer Cooler, No Change, or Prefer Warmer, drawn as a fully stacked bar with the Prefer Cooler share labeled inside each bar.}
+  \label{fig:preference-mix-and-by-space}
 \end{figure}
-\lipsum[11]
+\lipsum[14-16]
+\lipsum[17-19]
 
 \begin{figure*}[t]
   \centering
@@ -170,8 +175,8 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
   \caption{Empirical-Bayes feature construction. The left panel shows fitted Beta priors for prefer-cooler and prefer-warmer response rates; the center and right panels compare participants' raw and shrunk rates for the two features.}
   \label{fig:eb-shrinkage}
 \end{figure*}
-\lipsum[12]
-\lipsum[13]
+\lipsum[20-22]
+\lipsum[23-25]
 
 \subsection{Archetype discovery and interpretation}\label{sec:clustering}
 % TODO(author): Specify standardization, k-means, candidate K range, silhouette
@@ -179,7 +184,7 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 % Explain transparent post-hoc labels: Unconditional Coolers, Over-Cooled
 % Captives, Weather Responders, and Heat-Unbothered. Emphasize that labels are
 % descriptive and that membership is expected to be soft at boundaries.
-\lipsum[14-15]
+\lipsum[26-28]
 
 \subsection{Mechanistic scrutiny and robustness checks}\label{sec:scrutiny}
 % TODO(author): Pre-specify / describe the following analyses:
@@ -191,7 +196,7 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 %   heat-threshold agreement, and pairwise Cliff's delta signature contrasts.
 % Make clear that survey observations are participant-nested and all inference
 % is descriptive/associational rather than causal.
-\lipsum[16-17]
+\lipsum[29-31]
 
 % =============================================================================
 \section{Results}\label{sec:results}
@@ -201,7 +206,15 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 % TODO(author): Report executed descriptive results and use a compact initial
 % figure/table to establish response coverage, preference mix, space mix, and
 % outdoor-heat distribution.
-\lipsum[18-19]
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/01_S1_archetype_overview.pdf}
+  \caption{Overview of the four behavioral thermal-preference archetypes derived in this study (n = 104 participants). From left to right: the Craver (Constant Cool-Seekers; n = 23, 22.1\%), who prefers cooler more often, even in air-conditioned spaces; the Captive (Often Over-Cooled; n = 12, 11.5\%), who prefers warmer more often, especially in air-conditioned spaces; the Conventional (Normatively Responsive; n = 35, 33.7\%), whose prefer-cooler response rises with outdoor heat; and the Carefree (Heat-Unbothered; n = 34, 32.7\%), who most consistently reports no change, even outdoors. Each column shows a representative icon, a schematic line sketch of the archetype's thermal-preference behavior (axes unlabeled), its name and subtitle, its sample size and share of participants, and a one-line behavioral summary.}
+  \label{fig:archetype-overview}
+\end{figure*}
+
+\lipsum[32-34]
 
 
 \subsection{Behavioral thermal archetypes}\label{sec:archetype-results}
@@ -209,70 +222,66 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 % separation, group size, and standardized feature signatures. State the small
 % K=3 versus K=4 silhouette difference accurately; do not describe K=4 as an
 % objectively optimal solution.
-\lipsum[20-21]
+\lipsum[35-37]
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/00_D2_pca_silhouette.pdf}
   \caption{Four-archetype clustering diagnostics. The left panel projects the standardized feature space onto its first two principal components; the right panel shows silhouette widths for individual participants, grouped by archetype.}
   \label{fig:pca-silhouette}
 \end{figure*}
-\lipsum[22]
+\lipsum[38-40]
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/00_D3_centroid_profiles.pdf}
   \caption{Standardized feature signatures of the four behavioral thermal archetypes. Lines show cluster centroids for prefer-cooler rate, prefer-warmer rate, and heat sensitivity.}
   \label{fig:centroid-profiles}
 \end{figure}
-\lipsum[23]
+\lipsum[41-43]
 
 \subsection{Heat dose-response and environmental-control context}\label{sec:mechanistic-results}
 % TODO(author): Present the mechanistic scrutiny in a coherent order: heat
 % dose-response, over-cooling anatomy, tolerance versus exposure, and A/C
 % relief. Give uncertainty and effect sizes from the executed notebook outputs.
-\lipsum[24-25]
-\begin{figure}[htbp]
+\lipsum[44-46]
+
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\columnwidth]{figures/01_A1_relief_from_ac.pdf}
-  \caption{Prefer-cooler responses across outdoor, home, and likely air-conditioned contexts for each archetype.}
+  \includegraphics[width=\textwidth]{figures/01_A3_relief_by_context_5cat.pdf}
+  \caption{Prefer-cooler responses for each archetype across five probable control contexts, ordered by increasing air-conditioning likelihood (Outdoor with no A/C; Home with maybe A/C; Indoor Other with maybe A/C; Office or Classroom with likely A/C; and Transport with likely A/C), with 95 percent cluster-bootstrap confidence intervals. Each archetype uses a distinct marker in addition to color so the series remain distinguishable in black and white.}
   \label{fig:ac-relief}
-\end{figure}
-\lipsum[26]
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\columnwidth]{figures/01_A2_craver_cliffs_delta.pdf}
-  \caption{Pairwise separation of the Craver archetype from the remaining archetypes on participants' prefer-cooler rates, summarized using Cliff's delta.}
-  \label{fig:craver-cliffs-delta}
-\end{figure}
-\lipsum[27]
+\end{figure*}
+
+\lipsum[47-50]
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/01_B1_overcooling_anatomy.pdf}
-  \caption{Prefer-warmer responses by archetype and control context. Points show the percentage of responses indicating a preference for warmer conditions in outdoor, home, and likely air-conditioned contexts.}
+  \caption{Prefer-warmer (too cold) responses by archetype across the four probable control contexts, ordered by increasing air-conditioning likelihood (Outdoor with no A/C; Home with maybe A/C; Office, Class, or Other indoor with likely A/C; and Transport with very likely A/C). Bars show the percentage of responses indicating a preference for warmer conditions.}
   \label{fig:overcooling-anatomy}
 \end{figure}
-\lipsum[28]
-\begin{figure*}[t]
+\lipsum[51-52]
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=\textwidth]{figures/01_C1_dose_response_heat.pdf}
-  \caption{Thermal-preference dose response to outdoor heat. The top panel shows the probability of preferring cooler conditions and the bottom panel shows the probability of no change across outdoor heat-index sextile centers for each archetype.}
+  \includegraphics[width=\columnwidth]{figures/01_C3_dose_response_heat_3super.pdf}
+  \caption{Probability of preferring cooler conditions versus outdoor heat, shown separately for three probable control supergroups ordered by increasing air-conditioning likelihood (top to bottom: Outdoor with no A/C; Home or Other indoor with maybe A/C; and Office, Classroom, or Transport with likely A/C). Within each panel, one line per archetype gives the prefer-cooler share across outdoor heat-index sextile centers, with Wilson 95 percent intervals as shaded bands and a distinct marker per archetype (Craver, circle; Captive, cross; Conventional, triangle; Carefree, square) so the series remain distinguishable in black and white. The dotted vertical line marks the cohort median heat index.}
   \label{fig:heat-dose-response}
-\end{figure*}
-\lipsum[29]
+\end{figure}
+\lipsum[53-54]
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/01_C2_heat_coupling.pdf}
   \caption{Heat coupling by archetype. Points and horizontal intervals show the difference in participants' prefer-cooler probability between hot and not-hot observations, with 95\% bootstrap confidence intervals.}
   \label{fig:heat-coupling}
 \end{figure}
-\lipsum[30]
+\lipsum[55-56]
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/01_D1_exposure_provoked_comfort.pdf}
   \caption{Outdoor exposure and provoked comfort by archetype. The left panel summarizes participants' outdoor-exposure share; the right panel shows the probability of reporting No Change when observations are both hot and outdoors.}
   \label{fig:exposure-provoked-comfort}
 \end{figure*}
-\lipsum[31]
-\lipsum[32]
+\lipsum[57-58]
+\lipsum[59-60]
 
 \subsection{Robustness and boundary membership}\label{sec:robustness-results}
 % TODO(author): Report strong signature separation alongside the observed
@@ -285,15 +294,30 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
   \caption{Survey characteristics not used to construct the archetypes. From left to right, panels show the distribution of space type, noise distraction, and alone-versus-group context across the four archetypes.}
   \label{fig:independent-behaviors}
 \end{figure*}
-\lipsum[33-34]
+\lipsum[61-62]
+
+% \begin{figure*}[t]
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/01_E2_clustering_stability.pdf}
+%   \caption{Clustering stability under 90\% participant subsampling. The left panel shows adjusted Rand index values relative to the reference clustering; the right panel shows median archetype-membership retention.}
+%   \label{fig:clustering-stability}
+% \end{figure*}
+
+\lipsum[63-64]
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{figures/01_E2_clustering_stability.pdf}
-  \caption{Clustering stability under 90\% participant subsampling. The left panel shows adjusted Rand index values relative to the reference clustering; the right panel shows median archetype-membership retention.}
-  \label{fig:clustering-stability}
+  \includegraphics[width=\textwidth]{figures/01_E3_hr_and_movement_by_archetype.pdf}
+  \caption{Wearable physiology in the one hour before each survey, summarized to one value per participant and compared across the four archetypes. From left to right: resting heart-rate proxy (mean heart rate on low-activity occasions), mean heart rate, within-hour heart-rate standard deviation (all in beats per minute), and movement (steps per hour, drawn on a logarithmic axis because a single participant is far more active). In each panel the box marks the interquartile range and median and the points are individual participants, colored by archetype. Kruskal-Wallis epsilon-squared effect sizes are all below 0.03 and none of the differences is statistically significant, so the archetypes are not distinguished by heart rate or activity.}
+  \label{fig:hr-movement}
 \end{figure*}
-\lipsum[35]
-\lipsum[36]
+\lipsum[65-66]
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/02_B1_openness_vs_null_dimensions.pdf}
+  \caption{Onboarding measures by archetype: one candidate signal against representative null dimensions (n = 101 participants with onboarding data). Each panel shows a participant-level measure across the four archetypes as a box (interquartile range and median) with individual participants overlaid, colored by archetype, and is annotated with the Kruskal-Wallis epsilon-squared effect size and p-value. From left to right: Ten-Item Personality Inventory Openness (1 to 7), Satisfaction With Life Scale total (5 to 35), age in years, and body mass index. Openness is the only measure with a medium effect (epsilon-squared 0.137, p = 0.003), higher in the Carefree type, whereas the other dimensions overlap across archetypes.}
+  \label{fig:onboarding-openness}
+\end{figure*}
+\lipsum[67-68]
 
 % =============================================================================
 \section{Discussion}\label{sec:discussion}
@@ -302,25 +326,25 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 \subsection{What the archetypes add to thermal-comfort research}\label{sec:contribution}
 % TODO(author): Connect each archetype to the field without reifying the labels
 % or assigning traits/causes that were not measured.
-\lipsum[37-38]
+\lipsum[69-70]
 
 \subsection{Implications for buildings, controls, and personalization}\label{sec:implications}
 % TODO(author): Discuss design and operation implications at the appropriate
 % evidence level. Separate observations about likely A/C contexts from causal
 % claims about air-conditioning operation.
-\lipsum[39-40]
+\lipsum[71-72]
 
 \subsection{Strengths and limitations}\label{sec:limitations}
 % TODO(author): Address the Singapore cohort, self-selected participants,
 % participant-nested observations, weather-as-proxy limitation, location-context
 % assumptions, response imbalance, post-hoc cluster naming, and soft membership.
-\lipsum[41-42]
+\lipsum[73-74]
 
 \subsection{Future work}\label{sec:future-work}
 % TODO(author): Consider replication in other climates/cohorts, independent
 % validation, direct indoor environmental measurements, longitudinal change in
 % preferences, and designs that can evaluate causal control interventions.
-\lipsum[43-44]
+\lipsum[75-76]
 
 % =============================================================================
 \section{Conclusions}\label{sec:conclusions}
@@ -331,7 +355,7 @@ how thermal preference changes with context and time \cite{Stone1994-he}.
 
 % =============================================================================
 \section*{CRediT authorship contribution statement}
-\lipsum[45]
+\lipsum[77-78]
 
 % =============================================================================
 \section*{CRediT authorship contribution statement}
