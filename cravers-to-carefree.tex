@@ -165,6 +165,8 @@ The data were collected in Singapore with the open-source Cozie platform, an App
 The deployment itself grew out of a smartwatch-driven just-in-time adaptive intervention framework for building occupants \citep{Miller2022-dy}, and its instrumentation, recruitment, and preliminary results have been described in the methods and competition papers that accompanied it \citep{Miller2023-wi, Miller2025-qu}.
 Participants were recruited in and around the National University of Singapore under approval from its Institutional Review Board, gave informed consent, and wore a paired Apple Watch and iPhone during working hours for approximately four weeks while completing repeated micro-surveys \citep{Miller2026-cs}.
 The resulting privacy-protected dataset of 9{,}962 geolocated responses from 106 participants was released publicly for a machine-learning competition \citep{Miller2023-wi, Miller2025-qu} and is characterized at the level of urban space in the companion paper \citep{Miller2026-cs}.
+Within this dataset, the 9{,}520 responses that carry both a thermal-preference answer and a matched outdoor heat index form the basis for the present analysis, with a median of 96 responses per participant across the cohort.
+Reported preferences skew toward no change, cooler preferences are far more common than warmer ones, most responses come from the home, and the matched outdoor heat index is high and narrow around a median near $34\,^{\circ}$C, consistent with the warm tropical setting and characterized more fully in the companion paper \citep{Miller2026-cs}.
 Here the same underlying deployment is reused but analyzed at the level of the person, and the subsections below describe the survey measures and environmental-control context, the participant eligibility screen and person-level features, the archetype-discovery procedure, and the robustness checks used to scrutinize the resulting groupings.
 
 
@@ -185,7 +187,8 @@ Here the same underlying deployment is reused but analyzed at the level of the p
 
 \subsection{Survey measures, outdoor heat, and environmental-control context}\label{sec:measures}
 At each submission, the Cozie micro-survey presents a short battery of questions that records the participant's thermal preference and the level of nearby noise, together with conditional follow-ups on the kind of noise and earphone use, the location or space type, whether the participant is \emph{Alone} or in a \emph{Group}, and the activity being performed \citep{Miller2026-cs}.
-Figure~\ref{fig:cozie-interface} illustrates the two elements of these items as its primary components, thermal preference and location, and treats the remainder of the battery, along with the linked physiological, weather, and urban-context data, as outside its scope.
+Figure~\ref{fig:cozie-interface} shows the two survey questions that this analysis uses as its primary components, thermal preference and location.
+The remainder of the battery, along with the linked physiological, weather, and urban-context data, is treated as outside the scope of this study.
 The thermal-preference question asks whether a participant would prefer to be \emph{Cooler}, feel \emph{No change}, or prefer to be \emph{Warmer}, and it is answered on the watch alongside the companion question that records the category of space they occupy at that moment.
 Thermal preference is the primary behavioral outcome throughout this study because it captures the desired direction of change rather than a sensation label, which maps more directly onto the adaptive actions a person might take.
 The location question resolves each response to an everyday space type, such as home, office, classroom, transport, and outdoor settings, so that preferences can be read in the context where they were expressed.
@@ -203,8 +206,8 @@ This all-location screen retains 104 of the 106 participants, or 98\%, dropping 
 
 For each qualifying participant, three person-level features are constructed that summarize their thermal-preference behavior.
 The first two are the rates at which they prefer to be cooler and prefer to be warmer, computed across all of their responses and stabilized with empirical-Bayes Beta--Binomial shrinkage, which fits a cohort-wide Beta prior by marginal maximum likelihood and pulls each participant's rate toward that prior in proportion to how few responses they contributed.
-Figure~\ref{fig:eb-shrinkage} illustrates these elements.
 This shrinkage prevents participants with sparse records from producing extreme rates that would otherwise dominate the clustering.
+Figure~\ref{fig:eb-shrinkage} shows the fitted cohort priors and how the shrinkage pulls each participant's raw rates toward those priors.
 The third feature is a within-participant heat sensitivity, defined as the difference between their prefer-cooler rate on the hot side and on the cool side, $P(\mathrm{Cooler}\mid\mathrm{hot}) - P(\mathrm{Cooler}\mid\mathrm{cool})$, and left unshrunk so that it reflects each person's raw responsiveness to outdoor heat.
 Together these features place each participant in a compact behavioral space of how much they seek cooling, how much they seek warmth, and how strongly their cooling demand tracks outdoor heat, which the next subsection uses to discover the archetypes.
 
@@ -234,10 +237,9 @@ Because survey observations are nested within participants and were not experime
 \section{Results}\label{sec:results}
 % =============================================================================
 
-\subsection{Cohort coverage and thermal-preference context}\label{sec:cohort-results}
-% TODO(author): Report executed descriptive results and use a compact initial
-% figure/table to establish response coverage, preference mix, space mix, and
-% outdoor-heat distribution.
+
+Applying the person-level feature construction and clustering to the 104 eligible participants yields four behavioral thermal-preference archetypes, summarized in Figure~\ref{fig:archetype-overview}.
+The four groups, named the Craver, the Captive, the Conventional, and the Carefree, differ in how often they seek cooling, how often they report being too cold, and how strongly their preferences track outdoor heat.
 
 \begin{figure*}[t]
   \centering
@@ -248,11 +250,10 @@ Because survey observations are nested within participants and were not experime
 
 
 
-\subsection{Behavioral thermal archetypes}\label{sec:archetype-results}
-% TODO(author): Present qualification, candidate-K silhouette results, cluster
-% separation, group size, and standardized feature signatures. State the small
-% K=3 versus K=4 silhouette difference accurately; do not describe K=4 as an
-% objectively optimal solution.
+Clustering the standardized prefer-cooler rate, prefer-warmer rate, and heat sensitivity with k-means produced coherent groups across the candidate range, with the mean silhouette width highest at three clusters (0.322) and nearly identical at four (0.316).
+The four-cluster solution is carried forward because it separates an interpretively distinct group that the three-cluster solution merges, at negligible cost to cohesion, and it is not treated as an objectively optimal partition.
+Figure~\ref{fig:pca-silhouette} shows that the four groups are well separated in the principal-component projection of the feature space and internally coherent, with positive mean silhouette widths in every group.
+
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/00_D2_pca_silhouette.pdf}
@@ -265,6 +266,12 @@ Because survey observations are nested within participants and were not experime
   \caption{Standardized feature signatures of the four behavioral thermal archetypes. Lines show cluster centroids for prefer-cooler rate, prefer-warmer rate, and heat sensitivity.}
   \label{fig:centroid-profiles}
 \end{figure}
+
+Figure~\ref{fig:archetype-overview} summarizes how the four archetypes differ along the three behavioral features, and Figure~\ref{fig:centroid-profiles} quantifies these differences as standardized signatures.
+The Craver, or Constant Cool-Seekers (n = 23, 22.1\%), prefers cooler conditions in roughly 74\% of responses and carries a below-average heat sensitivity, seeking cooling whether or not outdoor heat is high.
+The Captive, or Often Over-Cooled (n = 12, 11.5\%), stands apart through a much higher prefer-warmer rate, near 21\% against only a few percent in the other groups, indicating that this group reports being too cold far more often than any other.
+The Conventional, or Normatively Responsive (n = 35, 33.7\%), the largest group, shows the strongest heat sensitivity, so its prefer-cooler response rises and falls with outdoor heat in the textbook thermoregulatory pattern.
+The Carefree, or Heat-Unbothered (n = 34, 32.7\%), sits below the cohort mean on all three features and reports no change in roughly 77\% of responses, remaining comfortable even outdoors at comparable heat exposure.
 
 \subsection{Heat dose-response and environmental-control context}\label{sec:mechanistic-results}
 % TODO(author): Present the mechanistic scrutiny in a coherent order: heat
