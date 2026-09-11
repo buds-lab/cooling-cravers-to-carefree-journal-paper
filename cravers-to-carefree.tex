@@ -124,7 +124,7 @@ Efforts to connect these models to the broader context that surrounds them, incl
 % alliesthesia, and over-cooling literature.
 
 Given these deficiencies, it is worth looking more closely at the wider set of factors that shape people's thermal experience in cities, which Figure~\ref{fig:thermal-preference-elements} organizes into two broad families.
-The left side gathers the physical, environmental, and physiological factors that classical models were built to handle but that continue to surprise us in their detail and interaction.
+The left side gathers the physical, environmental, and physiological factors that classical models were built to handle but that continue to surprise in their detail and interaction.
 At the environmental scale, real spaces are rarely uniform, and local asymmetries in radiant, surface, and air-movement conditions shape comfort in ways a single room temperature cannot represent \citep{Su2023-tg}, while personally controlled air movement can restore comfort and even cognitive performance at warmer set points \citep{Schiavon2017-fx, Porras-Salazar2024-mo}.
 Closer to the body, near-body heat sources such as laptops \citep{Zhang2014-im}, the insulation and cut of clothing \citep{Havenith2015-yn}, posture \citep{Tikuisis1996-fd}, and physical activity and metabolic rate \citep{Gaesser1975-jn} all shift the balance between heat production and loss.
 The physiological state of the occupant adds further variation through cutaneous blood flow \citep{Johnson2010-eh}, sweating and skin wettedness \citep{Fukazawa2009-nx}, hydration \citep{Sawka2001-sz}, the thermic effect of food and drink \citep{Swaminathan1985-ca, Otsuka2021-ty}, and age-related shifts in thermal thresholds \citep{Huang2010-hy}.
@@ -153,39 +153,28 @@ The data analyzed here come from exactly such a deployment, collected in Singapo
 The deployment grew out of a broader program that used smartwatch-based just-in-time adaptive interventions to nudge heat and noise mitigation in the urban environment \citep{Miller2022-dy, Miller2025-sv}, and the resulting dataset has since supported a public machine-learning competition on predicting heat and noise perception from digital-twin context \citep{Miller2023-wi, Miller2025-qu} as well as related work linking wearable reports to urban digital twins \citep{Ignatius2024-ii, Lei2026-dn}.
 Previous research characterizes this same deployment of 9{,}962 geolocated micro-survey responses from 106 participants, showing that everyday urban spaces separate most sharply along behavioral and acoustic lines and that thermal preference tracks the immediate controlled environment more than the outdoor weather \citep{Miller2026-cs}.
 That space-level characterization motivates the present study, which expands the behavioral dimension of the same dataset by shifting the unit of analysis from the space to the person.
-Rather than asking how perception differs between spaces, we cluster participants by their repeated thermal-preference behavior to uncover person-level archetypes, and we then examine whether participant metadata offers clues to the non-physical and environmental elements of their thermal experience, with the analytical sample and eligibility screen detailed in Section~\ref{sec:data-source}.
+Rather than asking how perception differs between spaces, this study clusters participants by their repeated thermal-preference behavior to uncover person-level archetypes, and then examines whether participant metadata offers clues to the non-physical and environmental elements of their thermal experience, with the analytical sample and eligibility screen detailed in Section~\ref{sec:features}.
 
 % =============================================================================
 \section{Methods}\label{sec:methods}
 % =============================================================================
 
 
-\subsection{Study design, cohort, and data source}\label{sec:data-source}
-% TODO(author): Describe the Cozie Singapore smartwatch deployment, ethics,
-% consent, time period, response count, participant count, and public
-% privacy-protected dataset. Cite the platform and companion dataset paper.
+This method builds directly on a smartwatch micro-survey deployment that was developed and reported across several prior studies, summarized here before detailing the archetype analysis that is new to this work.
+The data were collected in Singapore with the open-source Cozie platform, an Apple Watch application that administers short micro-surveys and links each response to the wearer's onboard physiological signals and to matched outdoor weather \citep{Tartarini2023-iu}.
+The deployment itself grew out of a smartwatch-driven just-in-time adaptive intervention framework for building occupants \citep{Miller2022-dy}, and its instrumentation, recruitment, and preliminary results have been described in the methods and competition papers that accompanied it \citep{Miller2023-wi, Miller2025-qu}.
+Participants were recruited in and around the National University of Singapore under approval from its Institutional Review Board, gave informed consent, and wore a paired Apple Watch and iPhone during working hours for approximately four weeks while completing repeated micro-surveys \citep{Miller2026-cs}.
+The resulting privacy-protected dataset of 9{,}962 geolocated responses from 106 participants was released publicly for a machine-learning competition \citep{Miller2023-wi, Miller2025-qu} and is characterized at the level of urban space in the companion paper \citep{Miller2026-cs}.
+Here the same underlying deployment is reused but analyzed at the level of the person, and the subsections below describe the survey measures and environmental-control context, the participant eligibility screen and person-level features, the archetype-discovery procedure, and the robustness checks used to scrutinize the resulting groupings.
+
+
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/cozie_diagram.pdf}
   \caption{Cozie smartwatch micro-survey interface. The thermal-preference question offers Cooler, No change, and Warmer responses; the accompanying location question records the space category at the time of response.}
   \label{fig:cozie-interface}
 \end{figure}
-
-\subsection{Survey measures, outdoor heat, and environmental-control context}\label{sec:measures}
-% TODO(author): Define thermal preference (Cooler / No change / Warmer), the
-% one-hour mean outdoor heat index, location categories, and the a-priori
-% contextual grouping by air-conditioning likelihood: Outdoor (No A/C);
-% Home (Maybe A/C); Office/Class/Other (Likely A/C); and Transport
-% (Very Likely A/C). Explain that outdoor weather is an exposure proxy rather
-% than a measurement of individual microclimate.
-
-
-\subsection{Participant eligibility and person-level features}\label{sec:features}
-% TODO(author): Document the all-location eligibility screen (minimum total,
-% hot-side, and cool-side observations); empirical-Bayes Beta--Binomial
-% shrinkage for P(Cooler) and P(Warmer); and unshrunk within-participant heat
-% sensitivity P(Cooler | hot) - P(Cooler | cool). Define the heat split using
-% the observed cohort median and give all quantities from executed output.
 
 \begin{figure}[htbp]
   \centering
@@ -194,6 +183,31 @@ Rather than asking how perception differs between spaces, we cluster participant
   \label{fig:preference-mix-and-by-space}
 \end{figure}
 
+\subsection{Survey measures, outdoor heat, and environmental-control context}\label{sec:measures}
+At each submission, the Cozie micro-survey presents a short battery of questions that records the participant's thermal preference and the level of nearby noise, together with conditional follow-ups on the kind of noise and earphone use, the location or space type, whether the participant is \emph{Alone} or in a \emph{Group}, and the activity being performed \citep{Miller2026-cs}.
+Figure~\ref{fig:cozie-interface} illustrates the two elements of these items as its primary components, thermal preference and location, and treats the remainder of the battery, along with the linked physiological, weather, and urban-context data, as outside its scope.
+The thermal-preference question asks whether a participant would prefer to be \emph{Cooler}, feel \emph{No change}, or prefer to be \emph{Warmer}, and it is answered on the watch alongside the companion question that records the category of space they occupy at that moment.
+Thermal preference is the primary behavioral outcome throughout this study because it captures the desired direction of change rather than a sensation label, which maps more directly onto the adaptive actions a person might take.
+The location question resolves each response to an everyday space type, such as home, office, classroom, transport, and outdoor settings, so that preferences can be read in the context where they were expressed.
+Figure~\ref{fig:preference-mix-and-by-space} summarizes the resulting survey composition, showing the overall balance of the three preference responses, how many surveys come from each space type, and how the preference mix shifts from one setting to another.
+To situate each response in its thermal context, each is joined to a one-hour mean outdoor heat index derived from matched local weather, which serves as an exposure proxy for the ambient conditions around the participant rather than a direct measurement of their individual microclimate.
+Because indoor spaces differ in how tightly their climate is controlled, each response is also assigned to an a-priori environmental-control context based on the likelihood that the occupied space is air-conditioned: outdoor settings are treated as having no air conditioning, home as possibly air-conditioned, offices, classrooms, and other indoor spaces as likely air-conditioned, and transport as very likely air-conditioned.
+This grouping makes it possible to ask whether a preference was expressed in a setting where the occupant could plausibly act on it through mechanical cooling, and it provides the control-context axis used in the mechanistic analysis that follows.
+
+
+\subsection{Participant eligibility and person-level features}\label{sec:features}
+Clustering participants requires a stable behavioral signal from each person, so the survey-level dataset is first restricted to participants who contributed enough responses on both sides of the heat range.
+Every response is labeled hot-side or cool-side relative to the cohort median of the one-hour outdoor heat index, which falls at $34.1\,^{\circ}$C, so that each participant can be summarized by how their preferences differ between warmer and cooler exposures.
+A participant qualifies for the analysis if they submitted at least 15 responses in total, with at least 5 on the hot side and at least 5 on the cool side, applied across all locations rather than the home alone.
+This all-location screen retains 104 of the 106 participants, or 98\%, dropping only the two who lacked sufficient coverage on one side of the split.
+
+For each qualifying participant, three person-level features are constructed that summarize their thermal-preference behavior.
+The first two are the rates at which they prefer to be cooler and prefer to be warmer, computed across all of their responses and stabilized with empirical-Bayes Beta--Binomial shrinkage, which fits a cohort-wide Beta prior by marginal maximum likelihood and pulls each participant's rate toward that prior in proportion to how few responses they contributed.
+Figure~\ref{fig:eb-shrinkage} illustrates these elements.
+This shrinkage prevents participants with sparse records from producing extreme rates that would otherwise dominate the clustering.
+The third feature is a within-participant heat sensitivity, defined as the difference between their prefer-cooler rate on the hot side and on the cool side, $P(\mathrm{Cooler}\mid\mathrm{hot}) - P(\mathrm{Cooler}\mid\mathrm{cool})$, and left unshrunk so that it reflects each person's raw responsiveness to outdoor heat.
+Together these features place each participant in a compact behavioral space of how much they seek cooling, how much they seek warmth, and how strongly their cooling demand tracks outdoor heat, which the next subsection uses to discover the archetypes.
+
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/00_C1_eb_shrinkage.pdf}
@@ -201,23 +215,20 @@ Rather than asking how perception differs between spaces, we cluster participant
   \label{fig:eb-shrinkage}
 \end{figure*}
 
-\subsection{Archetype discovery and interpretation}\label{sec:clustering}
-% TODO(author): Specify standardization, k-means, candidate K range, silhouette
-% evaluation, and the explicit interpretability decision to carry K=4 forward.
-% Explain transparent post-hoc labels: Unconditional Coolers, Over-Cooled
-% Captives, Weather Responders, and Heat-Unbothered. Emphasize that labels are
-% descriptive and that membership is expected to be soft at boundaries.
+\subsection{Archetype discovery, interpretation and scrutiny analysis}\label{sec:clustering}
+With each qualifying participant reduced to the three behavioral features, the features are standardized to zero mean and unit variance so that no single rate dominates the distance metric, and participants are grouped with k-means clustering.
+To choose the number of archetypes without over-fitting, candidate solutions from two to six clusters are swept and evaluated by their mean silhouette width, using many restarts and a fixed random seed for determinism.
+The number of archetypes to carry forward is selected by balancing silhouette cohesion against interpretability, rather than treating the silhouette optimum as definitive.
+The resulting groups are then interpreted through their standardized feature centroids and a principal-component projection of the feature space, alongside per-cluster silhouette widths that indicate how internally coherent each group is.
+Because the underlying features vary continuously, the groups are treated as descriptive behavioral summaries rather than categorical types, and membership is expected to be soft near the boundaries between them.
+The number of archetypes carried forward, their standardized signatures, and their descriptive names are presented in the Results.
 
-\subsection{Mechanistic scrutiny and robustness checks}\label{sec:scrutiny}
-% TODO(author): Pre-specify / describe the following analyses:
-% - dose-response of P(Cooler) and P(No change) over outdoor-heat sextiles;
-% - P(Warmer) by control context and the Likely-A/C minus Outdoor gradient;
-% - heat tolerance versus outdoor exposure;
-% - A/C relief across Outdoor and Likely-A/C contexts;
-% - participant-cluster bootstrap CIs, seed/subsample stability, alternative
-%   heat-threshold agreement, and pairwise Cliff's delta signature contrasts.
-% Make clear that survey observations are participant-nested and all inference
-% is descriptive/associational rather than causal.
+
+Beyond discovering the archetypes, they are subjected to a mechanistic scrutiny that tests whether each group behaves as its signature implies.
+The dose-response of thermal preference to outdoor heat is examined by binning responses across the observed heat range, and preferences are compared across the a-priori environmental-control contexts, focusing on the gradient between likely air-conditioned and outdoor settings.
+These contrasts are quantified with distribution-free effect sizes, principally Cliff's delta, and uncertainty is attached with participant-level bootstrap confidence intervals rather than relying on p-values.
+The stability of the solution is probed by re-clustering across random seeds and subsamples and by confirming that membership agrees under alternative outdoor-heat thresholds.
+Because survey observations are nested within participants and were not experimentally assigned, every comparison is treated as descriptive and associational rather than causal.
 
 % =============================================================================
 \section{Results}\label{sec:results}
