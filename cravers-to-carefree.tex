@@ -218,6 +218,8 @@ Together these features place each participant in a compact behavioral space of 
   \label{fig:eb-shrinkage}
 \end{figure*}
 
+
+
 \subsection{Archetype discovery, interpretation and scrutiny analysis}\label{sec:clustering}
 With each qualifying participant reduced to the three behavioral features, the features are standardized to zero mean and unit variance so that no single rate dominates the distance metric, and participants are grouped with k-means clustering.
 To choose the number of archetypes without over-fitting, candidate solutions from two to six clusters are swept and evaluated by their mean silhouette width, using many restarts and a fixed random seed for determinism.
@@ -225,6 +227,7 @@ The number of archetypes to carry forward is selected by balancing silhouette co
 The resulting groups are then interpreted through their standardized feature centroids and a principal-component projection of the feature space, alongside per-cluster silhouette widths that indicate how internally coherent each group is.
 Because the underlying features vary continuously, the groups are treated as descriptive behavioral summaries rather than categorical types, and membership is expected to be soft near the boundaries between them.
 The number of archetypes carried forward, their standardized signatures, and their descriptive names are presented in the Results.
+
 
 
 Beyond discovering the archetypes, they are subjected to a mechanistic scrutiny that tests whether each group behaves as its signature implies.
@@ -237,10 +240,6 @@ Because survey observations are nested within participants and were not experime
 \section{Results}\label{sec:results}
 % =============================================================================
 
-
-Applying the person-level feature construction and clustering to the 104 eligible participants yields four behavioral thermal-preference archetypes, summarized in Figure~\ref{fig:archetype-overview}.
-The four groups, named the Craver, the Captive, the Conventional, and the Carefree, differ in how often they seek cooling, how often they report being too cold, and how strongly their preferences track outdoor heat.
-
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/01_S1_archetype_overview.pdf}
@@ -249,10 +248,9 @@ The four groups, named the Craver, the Captive, the Conventional, and the Carefr
 \end{figure*}
 
 
+Applying the person-level feature construction and clustering to the 104 eligible participants yields four behavioral thermal-preference archetypes, summarized in Figure~\ref{fig:archetype-overview}.
+The four groups, named the Craver, the Captive, the Conventional, and the Carefree, differ in how often they seek cooling, how often they report being too cold, and how strongly their preferences track outdoor heat.
 
-Clustering the standardized prefer-cooler rate, prefer-warmer rate, and heat sensitivity with k-means produced coherent groups across the candidate range, with the mean silhouette width highest at three clusters (0.322) and nearly identical at four (0.316).
-The four-cluster solution is carried forward because it separates an interpretively distinct group that the three-cluster solution merges, at negligible cost to cohesion, and it is not treated as an objectively optimal partition.
-Figure~\ref{fig:pca-silhouette} shows that the four groups are well separated in the principal-component projection of the feature space and internally coherent, with positive mean silhouette widths in every group.
 
 \begin{figure*}[t]
   \centering
@@ -260,6 +258,12 @@ Figure~\ref{fig:pca-silhouette} shows that the four groups are well separated in
   \caption{Four-archetype clustering diagnostics. The left panel projects the standardized feature space onto its first two principal components; the right panel shows silhouette widths for individual participants, grouped by archetype.}
   \label{fig:pca-silhouette}
 \end{figure*}
+
+Clustering the standardized prefer-cooler rate, prefer-warmer rate, and heat sensitivity with k-means produced coherent groups across the candidate range, with the mean silhouette width highest at three clusters (0.322) and nearly identical at four (0.316).
+The four-cluster solution is carried forward because it separates an interpretively distinct group that the three-cluster solution merges, at negligible cost to cohesion, and it is not treated as an objectively optimal partition.
+Figure~\ref{fig:pca-silhouette} shows that the four groups are well separated in the principal-component projection of the feature space and internally coherent, with positive mean silhouette widths in every group.
+
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/00_D3_centroid_profiles.pdf}
@@ -274,9 +278,10 @@ The Conventional, or Normatively Responsive (n = 35, 33.7\%), the largest group,
 The Carefree, or Heat-Unbothered (n = 34, 32.7\%), sits below the cohort mean on all three features and reports no change in roughly 77\% of responses, remaining comfortable even outdoors at comparable heat exposure.
 
 \subsection{Heat dose-response and environmental-control context}\label{sec:mechanistic-results}
-% TODO(author): Present the mechanistic scrutiny in a coherent order: heat
-% dose-response, over-cooling anatomy, tolerance versus exposure, and A/C
-% relief. Give uncertainty and effect sizes from the executed notebook outputs.
+The four archetypes were derived from behavior alone, so a mechanistic scrutiny examines whether each group behaves as its signature implies once responses are placed back in their thermal and environmental context.
+The scrutiny proceeds through a coherent sequence: how far each group's cooling demand is relieved as spaces become more likely to be air-conditioned, the anatomy of over-cooling in the most conditioned settings, the dose-response of preference to outdoor heat, and the balance between heat tolerance and heat exposure.
+Throughout, uncertainty is reported as 95\% cluster-bootstrap confidence intervals that resample whole participants, and group contrasts are summarized with distribution-free effect sizes, so that no comparison rests on participant-nested responses being treated as independent.
+Because participants were not assigned to contexts or heat levels, every result is read as descriptive and associational rather than causal.
 
 \begin{figure*}[t]
   \centering
@@ -285,6 +290,10 @@ The Carefree, or Heat-Unbothered (n = 34, 32.7\%), sits below the cohort mean on
   \label{fig:ac-relief}
 \end{figure*}
 
+Figure~\ref{fig:ac-relief} shows the share of prefer-cooler responses for each archetype across five settings ordered by their air-conditioning likelihood, from outdoors with no air conditioning to offices, classrooms, and transport that are likely air-conditioned.
+For three of the four groups the prefer-cooler share falls as spaces become more likely to be air-conditioned, the signature of relief from mechanical cooling: the Conventional drops from about 62\% outdoors to 33\% in offices and classrooms, the Captive from 53\% to 23\%, and the Carefree, already the most heat-tolerant, from 32\% to 11\%.
+The Craver is the exception, holding a high prefer-cooler share of roughly 64 to 82\% across every context, including the spaces most likely to be air-conditioned, which points to a cooling demand that mechanical conditioning does not satisfy.
+The confidence intervals are wider for the smaller groups, particularly the Captive, but the separation of the Craver above the other archetypes in the likely air-conditioned settings is consistent.
 
 \begin{figure}[htbp]
   \centering
@@ -292,18 +301,31 @@ The Carefree, or Heat-Unbothered (n = 34, 32.7\%), sits below the cohort mean on
   \caption{Prefer-warmer (too cold) responses by archetype across the four probable control contexts, ordered by increasing air-conditioning likelihood (Outdoor with no A/C; Home with maybe A/C; Office, Class, or Other indoor with likely A/C; and Transport with very likely A/C). Bars show the percentage of responses indicating a preference for warmer conditions.}
   \label{fig:overcooling-anatomy}
 \end{figure}
+
+Figure~\ref{fig:overcooling-anatomy} isolates the too-cold response by plotting the prefer-warmer share of each archetype across the control contexts.
+The Captive is the only group that reports being too cold with any regularity, preferring warmer conditions in about 20 to 28\% of responses depending on the setting, against roughly 1 to 7\% for every other archetype.
+Its over-cooling is most pronounced in the likely air-conditioned offices, classrooms, and other indoor spaces, where the prefer-warmer share reaches 28\%.
+The within-Captive gradient from outdoors to these likely air-conditioned settings is positive, at about 7 percentage points, but its 95\% cluster-bootstrap interval is wide and includes zero, so the anatomy of over-cooling is clear in level while its context gradient stays uncertain in this small group of twelve participants.
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/01_C3_dose_response_heat_3super.pdf}
   \caption{Probability of preferring cooler conditions versus outdoor heat, shown separately for three probable control supergroups ordered by increasing air-conditioning likelihood (top to bottom: Outdoor with no A/C; Home or Other indoor with maybe A/C; and Office, Classroom, or Transport with likely A/C). Within each panel, one line per archetype gives the prefer-cooler share across outdoor heat-index sextile centers, with Wilson 95 percent intervals as shaded bands and a distinct marker per archetype (Craver, circle; Captive, cross; Conventional, triangle; Carefree, square) so the series remain distinguishable in black and white. The dotted vertical line marks the cohort median heat index.}
   \label{fig:heat-dose-response}
 \end{figure}
+
+Figure~\ref{fig:heat-dose-response} turns to the dose-response of cooling demand, tracing the prefer-cooler share against outdoor heat across sextiles within three control supergroups.
+Only the Conventional shows a clear upward slope, with its prefer-cooler share rising by about 18 percentage points between its coolest and hottest responses (95\% cluster-bootstrap interval 11 to 25 points), the signature of a group whose comfort tracks the weather.
+The Craver stays high and nearly flat, the Carefree stays low and nearly flat, and the Captive is flat as well, with heat couplings that are statistically indistinguishable from zero.
+The upward slope is clearest in the outdoor supergroup, where outdoor heat varies most and no mechanical cooling intervenes.
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/01_C2_heat_coupling.pdf}
   \caption{Heat coupling by archetype. Points and horizontal intervals show the difference in participants' prefer-cooler probability between hot and not-hot observations, with 95\% bootstrap confidence intervals.}
   \label{fig:heat-coupling}
 \end{figure}
+
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/01_D1_exposure_provoked_comfort.pdf}
