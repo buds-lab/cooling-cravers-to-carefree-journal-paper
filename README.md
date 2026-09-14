@@ -12,11 +12,47 @@ cravers-to-carefree.bib                      Numeric bibliography
 cravers-to-carefree.pdf                      Compiled manuscript
 figures/                                     Manuscript-ready PDF figures
 figures/figure1builders/                     Reproducible Figure 1 source and citation tools
+analysis/                                    Self-contained companion analysis notebook
 elsarticle.cls                               Elsevier document class
 elsarticle-num.bst                           Elsevier numeric bibliography style
 ```
 
 The manuscript uses Elsevier’s `final,5p,times,twocolumn` layout and numeric citations.
+
+## Companion analysis notebook
+
+`analysis/Thermal_Archetype_Companion_Analysis.ipynb` is a self-contained, deterministic notebook that reproduces the full analysis behind the paper — from the raw Cozie Singapore micro-surveys to every data figure — with documentation for each step so it can be read alongside the manuscript. It derives the four behavioral thermal-preference archetypes (Craver, Captive, Conventional, Carefree), runs the mechanistic scrutiny and robustness checks, and regenerates the manuscript data figures matching their Times New Roman style and archetype palette.
+
+Every number quoted in the paper is produced by executed cells. The notebook loads data directly from the two public source repositories and writes regenerated figures and tables into `analysis/figures/` and `analysis/outputs/`; it does not overwrite the manuscript figures in `figures/`.
+
+Manuscript data figures reproduced by the notebook:
+
+| Manuscript | Tag | Content |
+|-----------|-----|---------|
+| Figure 3 | `00_A2` | Survey composition and thermal preference by space type |
+| Figure 4 | `00_C1` | Empirical-Bayes feature construction |
+| Figure 5 | `01_S1` | Four-archetype overview schematic |
+| Figure 6 | `00_D2` | Clustering diagnostics (PCA + silhouette) |
+| Figure 7 | `00_D3` | Standardized archetype signatures |
+| Figure 8 | `01_A3` | Prefer-cooler responses across control contexts |
+| Figure 9 | `01_B1` | Over-cooling anatomy |
+| Figure 10 | `01_C3` | Heat dose-response across control supergroups |
+| Figure 11 | `01_C2` | Heat coupling by archetype |
+| Figure 12 | `01_D1` | Outdoor exposure and provoked comfort |
+| Figure 13 | `01_E1` | Independent survey behaviors |
+| Figure 14 | `01_E3` | Wearable physiology |
+| Figure 15 | `02_B1` | Onboarding measures |
+
+Figures 1 and 2 are illustrations with no data dependency and are not produced by the notebook.
+
+### Running the companion notebook
+
+The notebook requires the two source data repositories (listed under *Foundational data* below) to sit **next to this repository** under a common parent directory; it locates them automatically regardless of the kernel's working directory. Install the dependencies and run all cells:
+
+```bash
+pip install -r analysis/requirements.txt
+jupyter lab analysis/Thermal_Archetype_Companion_Analysis.ipynb
+```
 
 ## Build the manuscript
 

@@ -1,0 +1,11 @@
+# Python dependencies for the companion analysis notebook
+# (Thermal_Archetype_Companion_Analysis.ipynb)
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+fastparquet
+# For running the notebook
+jupyterlab
+nbformat

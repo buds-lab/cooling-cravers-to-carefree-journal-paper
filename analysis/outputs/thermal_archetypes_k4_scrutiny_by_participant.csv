@@ -1,0 +1,105 @@
+id_participant,mnemonic,n,cooler_rate,warmer_rate,heat_sensitivity,home_warmer_raw,archetype,outdoor_share,p_nochange_when_hot,p_cooler_when_hot,heat_coupling
+orenth01,Captive,105,0.3815,0.2987,-0.0544,0.3833,Often Over-Cooled,0.1429,0.1628,0.3488,-0.0544
+orenth02,Captive,138,0.5691,0.2862,-0.2391,0.3699,Often Over-Cooled,0.1522,0.2174,0.413,-0.2391
+orenth03,Craver,103,0.9085,0.0057,-0.0735,0.0,Constant Cool-Seekers,0.0388,0.129,0.871,-0.0735
+orenth04,Conventional,100,0.4584,0.1049,0.2994,0.0328,Normatively Responsive,0.1,0.2432,0.6486,0.2994
+orenth05,Carefree,101,0.0301,0.0058,-0.0333,0.0,Heat-Unbothered,0.099,1.0,0.0,-0.0333
+orenth06,Carefree,96,0.0822,0.006,0.1047,0.0,Heat-Unbothered,0.0833,0.8519,0.1481,0.1047
+orenth07,Carefree,102,0.087,0.0234,0.1088,0.0,Heat-Unbothered,0.1275,0.8333,0.1296,0.1088
+orenth08,Carefree,107,0.1832,0.0224,-0.0968,0.0,Heat-Unbothered,0.1495,0.8519,0.1296,-0.0968
+orenth09,Captive,98,0.3484,0.1894,-0.0693,0.0588,Often Over-Cooled,0.1224,0.4706,0.3137,-0.0693
+orenth10,Captive,102,0.1824,0.1739,0.2118,0.1757,Often Over-Cooled,0.0392,0.4118,0.3529,0.2118
+orenth11,Carefree,103,0.2941,0.0583,-0.1062,0.0725,Heat-Unbothered,0.0388,0.6852,0.2407,-0.1062
+orenth12,Craver,78,0.7812,0.0185,0.1222,0.0,Constant Cool-Seekers,0.2179,0.1111,0.8889,0.1222
+orenth13,Conventional,96,0.5478,0.0995,0.1272,0.0,Normatively Responsive,0.1042,0.2128,0.617,0.1272
+orenth14,Conventional,98,0.1401,0.061,0.1366,0.0448,Normatively Responsive,0.1633,0.7209,0.2093,0.1366
+orenth15,Conventional,91,0.2678,0.0161,0.1125,0.0139,Normatively Responsive,0.0,0.6522,0.3478,0.1125
+orenth16,Conventional,97,0.3519,0.0801,0.1604,0.1129,Normatively Responsive,0.0825,0.4762,0.4762,0.1604
+orenth17,Carefree,102,0.0298,0.0411,0.0437,0.0,Heat-Unbothered,0.049,0.9444,0.0556,0.0437
+orenth18,Conventional,84,0.1972,0.1015,0.1231,0.0741,Normatively Responsive,0.119,0.5897,0.2564,0.1231
+orenth19,Carefree,79,0.3316,0.0294,-0.1647,0.0,Heat-Unbothered,0.6329,0.7647,0.2353,-0.1647
+orenth20,Conventional,101,0.6756,0.0147,0.1537,0.0122,Normatively Responsive,0.0495,0.1875,0.8125,0.1537
+orenth21,Captive,99,0.4039,0.1422,-0.0519,0.1,Often Over-Cooled,0.0606,0.5909,0.3636,-0.0519
+orenth22,Captive,100,0.3222,0.186,-0.0136,0.0303,Often Over-Cooled,0.03,0.3448,0.3103,-0.0136
+orenth23,Carefree,87,0.302,0.0372,-0.1774,0.0,Heat-Unbothered,0.1379,0.75,0.1786,-0.1774
+orenth24,Conventional,100,0.3027,0.0058,0.2282,0.0,Normatively Responsive,0.12,0.5357,0.4643,0.2282
+orenth25,Carefree,93,0.1056,0.0639,0.0097,0.0,Heat-Unbothered,0.0323,0.8276,0.1034,0.0097
+orenth26,Captive,54,0.231,0.2253,0.1431,0.0,Often Over-Cooled,0.1296,0.5652,0.3043,0.1431
+orenth27,Craver,68,0.6938,0.0588,0.0255,0.037,Constant Cool-Seekers,0.0882,0.1818,0.7273,0.0255
+orenth28,Carefree,91,0.2252,0.0358,0.0823,0.0,Heat-Unbothered,0.1648,0.6207,0.2759,0.0823
+orenth29,Conventional,75,0.0915,0.0424,0.1824,0.05,Normatively Responsive,0.1733,0.6923,0.2308,0.1824
+orenth30,Carefree,17,0.4607,0.0588,-0.1,0.0,Heat-Unbothered,0.1765,0.4,0.4,-0.1
+orenth31,Craver,83,0.6541,0.0069,-0.1808,0.0,Constant Cool-Seekers,0.0361,0.4615,0.5385,-0.1808
+orenth32,Conventional,112,0.1404,0.0703,0.2302,0.029,Normatively Responsive,0.0982,0.5333,0.3333,0.2302
+orenth33,Craver,99,0.6888,0.0332,-0.1556,0.0,Constant Cool-Seekers,0.101,0.2222,0.5556,-0.1556
+orenth34,Craver,64,0.8402,0.0086,-0.0949,0.0,Constant Cool-Seekers,0.0156,0.2222,0.7778,-0.0949
+orenth35,Conventional,74,0.4703,0.0076,0.0333,0.0,Normatively Responsive,0.1216,0.5,0.5,0.0333
+orenth36,Conventional,87,0.2575,0.0066,0.2792,0.0,Normatively Responsive,0.2644,0.5,0.5,0.2792
+orenth38,Craver,106,0.5342,0.0055,0.0008,0.0,Constant Cool-Seekers,0.0566,0.4615,0.5385,0.0008
+orenth39,Carefree,79,0.0381,0.0183,-0.0286,0.0,Heat-Unbothered,0.1519,1.0,0.0,-0.0286
+orenth40,Captive,81,0.2282,0.2353,0.25,0.2683,Often Over-Cooled,0.1605,0.2222,0.4444,0.25
+orenth41,Carefree,101,0.0686,0.0772,0.014,0.0375,Heat-Unbothered,0.0495,0.9286,0.0714,0.014
+orenth43,Carefree,98,0.1401,0.0151,0.075,0.0238,Heat-Unbothered,0.0306,0.8,0.2,0.075
+orenth44,Carefree,19,0.189,0.1216,-0.2308,,Heat-Unbothered,0.2632,0.6667,0.0,-0.2308
+orenth45,Carefree,94,0.0322,0.0252,0.0589,0.0,Heat-Unbothered,0.2021,0.8571,0.0714,0.0589
+orenth46,Conventional,108,0.4072,0.0054,0.149,0.0,Normatively Responsive,0.1204,0.4615,0.5385,0.149
+orenth47,Carefree,29,0.161,0.0412,0.0065,0.0,Heat-Unbothered,0.3103,0.8571,0.1429,0.0065
+orenth48,Carefree,66,0.1616,0.0863,-0.0302,0.1026,Heat-Unbothered,0.1061,0.75,0.125,-0.0302
+orenth49,Carefree,62,0.0173,0.0089,0.0,0.0,Heat-Unbothered,0.0484,1.0,0.0,0.0
+orenth50,Conventional,58,0.4625,0.0239,0.2829,0.0,Normatively Responsive,0.1379,0.2857,0.7143,0.2829
+usk01,Carefree,95,0.1546,0.0533,-0.0528,0.0263,Heat-Unbothered,0.1158,0.8065,0.129,-0.0528
+usk02,Craver,102,0.5069,0.0234,-0.1426,0.0,Constant Cool-Seekers,0.0882,0.5345,0.4483,-0.1426
+usk03,Carefree,93,0.3875,0.0351,0.038,0.0,Heat-Unbothered,0.1183,0.5577,0.4038,0.038
+usk04,Craver,102,0.6309,0.0677,0.0124,0.0,Constant Cool-Seekers,0.1373,0.3214,0.6429,0.0124
+usk05,Conventional,92,0.3388,0.0354,0.1288,0.0,Normatively Responsive,0.2174,0.5614,0.386,0.1288
+usk06,Craver,77,0.7284,0.0869,0.1133,,Constant Cool-Seekers,0.1558,0.16,0.78,0.1133
+usk07,Conventional,97,0.412,0.006,0.2319,0.0,Normatively Responsive,0.134,0.4681,0.5319,0.2319
+usk08,Craver,94,0.7347,0.0062,0.0692,0.0,Constant Cool-Seekers,0.0638,0.2281,0.7719,0.0692
+usk09,Carefree,100,0.2444,0.0238,-0.0703,0.0172,Heat-Unbothered,0.12,0.7692,0.2154,-0.0703
+usk10,Carefree,88,0.3317,0.0772,-0.0228,0.0,Heat-Unbothered,0.0795,0.5763,0.322,-0.0228
+usk11,Craver,97,0.4922,0.043,-0.0596,0.0,Constant Cool-Seekers,0.134,0.507,0.4789,-0.0596
+usk12,Conventional,61,0.3624,0.0368,0.1824,0.0,Normatively Responsive,0.0656,0.5135,0.4324,0.1824
+usk13,Captive,98,0.1897,0.2169,-0.0254,0.0,Often Over-Cooled,0.0816,0.5238,0.1746,-0.0254
+usk14,Conventional,98,0.4873,0.0793,0.1517,0.0,Normatively Responsive,0.1224,0.3966,0.5517,0.1517
+usk15,Carefree,96,0.4769,0.1088,-0.0119,0.0909,Heat-Unbothered,0.1146,0.4237,0.4746,-0.0119
+usk16,Craver,93,0.9094,0.0062,-0.0352,0.0,Constant Cool-Seekers,0.0753,0.0893,0.9107,-0.0352
+usk17,Carefree,98,0.3683,0.0151,-0.0758,0.0,Heat-Unbothered,0.0918,0.6667,0.3333,-0.0758
+usk18,Carefree,87,0.2352,0.0372,-0.1778,0.0,Heat-Unbothered,0.0805,0.7746,0.1972,-0.1778
+usk19,Captive,96,0.3454,0.2397,-0.1705,0.0,Often Over-Cooled,0.0208,0.3864,0.3295,-0.1705
+usk20,Conventional,93,0.1474,0.0447,0.128,0.0667,Normatively Responsive,0.0753,0.7857,0.1714,0.128
+usk21,Conventional,78,0.2861,0.0522,0.1841,0.0,Normatively Responsive,0.0513,0.619,0.3175,0.1841
+usk22,Carefree,104,0.0479,0.1013,0.03,0.0,Heat-Unbothered,0.1923,0.8103,0.0517,0.03
+usk23,Conventional,43,0.5485,0.012,0.2843,0.0,Normatively Responsive,0.093,0.3824,0.6176,0.2843
+usk24,Captive,112,0.3146,0.1516,0.1352,0.1928,Often Over-Cooled,0.1696,0.4923,0.3692,0.1352
+usk25,Captive,98,0.3385,0.1802,-0.0385,0.0,Often Over-Cooled,0.102,0.4516,0.3226,-0.0385
+usk26,Craver,76,0.9153,0.0189,-0.0251,0.0,Constant Cool-Seekers,0.25,0.0545,0.9273,-0.0251
+usk27,Craver,69,0.8652,0.0081,-0.129,0.0,Constant Cool-Seekers,0.1739,0.129,0.871,-0.129
+usk28,Conventional,89,0.3826,0.0765,0.0884,0.0962,Normatively Responsive,0.0899,0.4918,0.4098,0.0884
+usk29,Conventional,156,0.8446,0.0158,0.2226,0.0204,Normatively Responsive,0.0641,0.0847,0.9068,0.2226
+usk30,Conventional,96,0.5579,0.0247,0.1926,0.0185,Normatively Responsive,0.1146,0.3827,0.5926,0.1926
+usk31,Carefree,68,0.0723,0.0208,0.0,0.0169,Heat-Unbothered,0.0441,0.9216,0.0588,0.0
+usk32,Craver,120,0.6199,0.0202,-0.3314,0.0,Constant Cool-Seekers,0.1583,0.4255,0.5532,-0.3314
+usk33,Carefree,84,0.1396,0.091,0.0083,0.0,Heat-Unbothered,0.0714,0.8,0.1333,0.0083
+usk34,Conventional,101,0.3962,0.0861,0.0856,0.0,Normatively Responsive,0.0297,0.4865,0.4189,0.0856
+usk35,Carefree,109,0.1084,0.0137,0.0899,0.0,Heat-Unbothered,0.1284,0.8636,0.1364,0.0899
+usk36,Conventional,85,0.6164,0.0276,0.1438,0.0,Normatively Responsive,0.0471,0.3288,0.6438,0.1438
+usk37,Conventional,99,0.4432,0.015,0.1105,0.0,Normatively Responsive,0.1212,0.5244,0.4634,0.1105
+usk38,Conventional,150,0.4262,0.004,0.078,0.0,Normatively Responsive,0.0333,0.5536,0.4464,0.078
+usk39,Conventional,102,0.5832,0.0057,0.2652,0.0,Normatively Responsive,0.0,0.3286,0.6714,0.2652
+usk40,Craver,45,0.9231,0.0116,-0.0606,0.0,Constant Cool-Seekers,0.1111,0.0606,0.9394,-0.0606
+usk41,Conventional,97,0.4822,0.043,0.0882,0.04,Normatively Responsive,0.1237,0.45,0.5,0.0882
+usk42,Conventional,82,0.2726,0.05,0.1182,0.0,Normatively Responsive,0.0854,0.6333,0.3,0.1182
+usk43,Carefree,109,0.1979,0.0137,-0.0012,0.0,Heat-Unbothered,0.055,0.8077,0.1923,-0.0012
+usk44,Carefree,97,0.0914,0.0801,-0.0938,0.0714,Heat-Unbothered,0.0722,0.8462,0.0641,-0.0938
+usk45,Craver,92,0.6764,0.0742,0.0671,0.0179,Constant Cool-Seekers,0.0978,0.2192,0.6986,0.0671
+usk46,Conventional,66,0.6122,0.0474,0.1136,0.1667,Normatively Responsive,0.0303,0.2955,0.6591,0.1136
+usk47,Craver,82,0.8977,0.007,-0.0382,0.0,Constant Cool-Seekers,0.1098,0.0938,0.9062,-0.0382
+usk48,Carefree,90,0.2922,0.0361,0.0326,0.0,Heat-Unbothered,0.1333,0.6761,0.2958,0.0326
+usk49,Craver,101,0.6274,0.0236,0.0764,0.0159,Constant Cool-Seekers,0.0891,0.3333,0.6533,0.0764
+usk50,Craver,85,0.7987,0.0067,-0.0144,0.0,Constant Cool-Seekers,0.1412,0.193,0.807,-0.0144
+usk51,Conventional,40,0.3066,0.0127,0.1303,0.0,Normatively Responsive,0.075,0.6316,0.3684,0.1303
+usk52,Conventional,103,0.5021,0.0144,0.0788,0.0,Normatively Responsive,0.2816,0.4595,0.527,0.0788
+usk53,Conventional,98,0.4278,0.116,0.2035,0.1594,Normatively Responsive,0.1122,0.407,0.4535,0.2035
+usk54,Craver,97,0.7928,0.006,0.0477,0.0,Constant Cool-Seekers,0.1546,0.1831,0.8169,0.0477
+usk55,Carefree,95,0.3182,0.0816,0.0303,0.0492,Heat-Unbothered,0.0211,0.569,0.3276,0.0303
+usk56,Craver,98,0.8941,0.0059,0.1488,0.0,Constant Cool-Seekers,0.1122,0.0448,0.9552,0.1488
