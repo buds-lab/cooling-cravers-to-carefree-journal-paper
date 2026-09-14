@@ -89,7 +89,7 @@ thermal comfort \sep thermal preference \sep personal comfort \sep wearable sens
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/thermal_preference_elements_v15_190mm_1.pdf}
-  \caption{Elements shaping individual thermal preference. Physical, environmental, and physiological influences are shown on the left, with psychological, cultural, economic, and historical or institutional influences on the right.}
+  \caption{The many elements that shape individual thermal preference. Physical, environmental, and physiological influences are gathered on the left, with the psychological, cultural, economic, and historical or institutional influences that sit outside the heat balance on the right, together illustrating why identical conditions can feel different to different people.}
   \label{fig:thermal-preference-elements}
 \end{figure*}
 
@@ -109,7 +109,7 @@ Efforts to connect these models to the broader context that surrounds them, incl
 % alliesthesia, and over-cooling literature.
 
 Given these deficiencies, it is worth looking more closely at the wider set of factors that shape people's thermal experience in cities. 
-Figure~\ref{fig:thermal-preference-elements} organizes them into two broad families.
+Figure~\ref{fig:thermal-preference-elements} organizes a non-exhaustive list of these potential influences divided into two broad families.
 The left side gathers the physical, environmental, and physiological factors that classical models were built to handle but that continue to surprise in their detail and interaction.
 At the environmental scale, real spaces are rarely uniform, and local asymmetries in radiant, surface, and air-movement conditions shape comfort in ways a single room temperature cannot represent \citep{Su2023-tg}, while personally controlled air movement can restore comfort and even cognitive performance at warmer set points \citep{Schiavon2017-fx, Porras-Salazar2024-mo}.
 Closer to the body, near-body heat sources such as laptops \citep{Zhang2014-im}, the insulation and cut of clothing \citep{Havenith2015-yn}, posture \citep{Tikuisis1996-fd}, and physical activity and metabolic rate \citep{Gaesser1975-jn} all shift the balance between heat production and loss.
@@ -153,14 +153,14 @@ Here the same underlying deployment is reused but analyzed at the level of the p
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/cozie_diagram.pdf}
-  \caption{Cozie smartwatch micro-survey interface for recording thermal preference and current space type.}
+  \caption{The Cozie smartwatch micro-survey interface, which prompts participants to report their thermal preference and current space type directly from the wrist.}
   \label{fig:cozie-interface}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/00_A2_preference_mix_and_by_space.pdf}
-  \caption{Survey composition and thermal preference by space type. The panels show the overall response mix (top), survey distribution across space types (middle), and response mix within each space type (bottom).}
+  \caption{How thermal preference is distributed across the deployment. The panels trace the overall response mix (top), where surveys were collected across space types (middle), and how the preference mix shifts within each space type (bottom).}
   \label{fig:preference-mix-and-by-space}
 \end{figure}
 
@@ -193,7 +193,7 @@ Together these features place each participant in a compact behavioral space of 
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/00_C1_eb_shrinkage.pdf}
-  \caption{Empirical-Bayes feature construction. Fitted Beta priors are shown on the left, with participants' raw and shrunk prefer-cooler and prefer-warmer rates in the center and right panels.}
+  \caption{Constructing stable person-level features through empirical-Bayes shrinkage. Fitted Beta priors are shown on the left, and the center and right panels show how participants' raw prefer-cooler and prefer-warmer rates are pulled toward the cohort mean, most strongly for those with few responses.}
   \label{fig:eb-shrinkage}
 \end{figure*}
 
@@ -222,7 +222,7 @@ Because survey observations are nested within participants and were not experime
 \begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_S1_archetype_overview.pdf}
-  \caption{Overview of the four behavioral thermal-preference archetypes (n = 104 participants): Craver (Constant Cool-Seekers; n = 23, 22.1\%), Captive (Often Over-Cooled; n = 12, 11.5\%), Conventional (Normatively Responsive; n = 35, 33.7\%), and Carefree (Heat-Unbothered; n = 34, 32.7\%).}
+  \caption{The four behavioral thermal-preference archetypes that emerge from participants' repeated feedback (n = 104): the Craver (Constant Cool-Seekers; n = 23, 22.1\%), who keeps reaching for cooler even indoors; the Captive (Often Over-Cooled; n = 12, 11.5\%), who is frequently left too cold; the Conventional (Normatively Responsive; n = 35, 33.7\%), who tracks the heat as expected; and the Carefree (Heat-Unbothered; n = 34, 32.7\%), who is largely content across conditions.}
   \label{fig:archetype-overview}
 \end{figure*}
 
@@ -239,7 +239,7 @@ The Carefree, or Heat-Unbothered (n = 34, 32.7\%), sits below the cohort mean on
 \begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/00_D2_pca_silhouette.pdf}
-  \caption{Four-archetype clustering diagnostics: principal-component projection of the standardized feature space (left) and participant silhouette widths by archetype (right).}
+  \caption{Diagnostics confirming that the four archetypes are well separated: a principal-component projection of the standardized feature space (left) and participant silhouette widths by archetype (right).}
   \label{fig:pca-silhouette}
 \end{figure*}
 
@@ -251,7 +251,7 @@ Figure~\ref{fig:pca-silhouette} shows that the four groups are well separated in
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/00_D3_centroid_profiles.pdf}
-  \caption{Standardized cluster centroids for prefer-cooler rate, prefer-warmer rate, and heat sensitivity across the four archetypes.}
+  \caption{The behavioral signature of each archetype, drawn as standardized cluster centroids for prefer-cooler rate, prefer-warmer rate, and heat sensitivity.}
   \label{fig:centroid-profiles}
 \end{figure}
 
@@ -265,7 +265,7 @@ Because participants were not assigned to contexts or heat levels, every result 
 \begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_A3_relief_by_context_5cat.pdf}
-  \caption{Prefer-cooler responses by archetype across probable control contexts ordered by increasing air-conditioning likelihood, with 95 percent cluster-bootstrap confidence intervals.}
+  \caption{Whether air conditioning brings relief, shown as prefer-cooler responses by archetype across probable control contexts ordered by increasing air-conditioning likelihood, with 95 percent cluster-bootstrap confidence intervals.}
   \label{fig:ac-relief}
 \end{figure*}
 
@@ -277,7 +277,7 @@ The confidence intervals are wider for the smaller groups, particularly the Capt
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/01_B1_overcooling_anatomy.pdf}
-  \caption{Prefer-warmer responses by archetype across probable control contexts ordered by increasing air-conditioning likelihood.}
+  \caption{The over-cooling signal, shown as prefer-warmer responses by archetype across probable control contexts ordered by increasing air-conditioning likelihood.}
   \label{fig:overcooling-anatomy}
 \end{figure}
 
@@ -289,7 +289,7 @@ The within-Captive gradient from outdoors to these likely air-conditioned settin
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/01_C3_dose_response_heat_3super.pdf}
-  \caption{Probability of preferring cooler conditions across outdoor heat-index sextiles and archetypes, stratified by probable control context from lowest (top) to highest (bottom) air-conditioning likelihood, with Wilson 95 percent intervals and the cohort median heat index.}
+  \caption{How each archetype responds to rising outdoor heat, shown as the probability of preferring cooler conditions across heat-index sextiles, stratified by probable control context from lowest (top) to highest (bottom) air-conditioning likelihood, with Wilson 95 percent intervals and the cohort median heat index.}
   \label{fig:heat-dose-response}
 \end{figure}
 
@@ -301,7 +301,7 @@ The upward slope is clearest in the outdoor supergroup, where outdoor heat varie
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/01_C2_heat_coupling.pdf}
-  \caption{Difference in participants' prefer-cooler probability between hot and not-hot observations by archetype, with 95\% bootstrap confidence intervals.}
+  \caption{How tightly each archetype's cooling demand tracks heat, shown as the difference in participants' prefer-cooler probability between hot and not-hot observations, with 95\% bootstrap confidence intervals.}
   \label{fig:heat-coupling}
 \end{figure}
 
@@ -311,7 +311,7 @@ Only the Conventional has a coupling distinguishable from zero, at about $+0.18$
 \begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_D1_exposure_provoked_comfort.pdf}
-  \caption{Outdoor-exposure share (left) and probability of reporting No Change during hot outdoor observations (right) by archetype.}
+  \caption{Where the archetypes spend their time and how they cope when heat is unavoidable: outdoor-exposure share (left) and the probability of reporting No Change during hot outdoor observations (right).}
   \label{fig:exposure-provoked-comfort}
 \end{figure*}
 
@@ -327,7 +327,7 @@ Read together with their equal exposure, this points to genuine heat tolerance i
 \begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_E1_independent_behaviours.pdf}
-  \caption{Survey characteristics not used to construct the archetypes: space type, noise distraction, and social context (left to right).}
+  \caption{Survey characteristics held out from the clustering, offering an independent check on the archetypes: space type, noise distraction, and social context (left to right).}
   \label{fig:independent-behaviors}
 \end{figure*}
 
@@ -338,7 +338,7 @@ The archetypes also vary in survey characteristics that were never used in the c
 \begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_E3_hr_and_movement_by_archetype.pdf}
-  \caption{Participant-level wearable physiology during the hour before each survey by archetype: resting heart-rate proxy, mean heart rate, heart-rate standard deviation, and movement (left to right). None differs significantly across archetypes (Kruskal-Wallis epsilon-squared $< 0.03$).}
+  \caption{Wearable physiology offers no shortcut to the archetypes: participant-level summaries during the hour before each survey, comprising resting heart-rate proxy, mean heart rate, heart-rate standard deviation, and movement (left to right). None differs significantly across archetypes (Kruskal-Wallis epsilon-squared $< 0.03$).}
   \label{fig:hr-movement}
 \end{figure*}
 
@@ -348,7 +348,7 @@ This null is reassuring, because thermal preference is a perceptual and behavior
 \begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/02_B1_openness_vs_null_dimensions.pdf}
-  \caption{Participant-level onboarding measures by archetype (n = 101): openness, life satisfaction, age, and body mass index (left to right). Openness is higher among the Carefree archetype (Kruskal-Wallis epsilon-squared = 0.137, $p = 0.003$), while the other measures overlap across groups.}
+  \caption{One stable trait stands out among the onboarding measures (n = 101): openness, life satisfaction, age, and body mass index (left to right). Openness runs higher among the Carefree archetype (Kruskal-Wallis epsilon-squared = 0.137, $p = 0.003$), while the other measures overlap across groups.}
   \label{fig:onboarding-openness}
 \end{figure*}
 
