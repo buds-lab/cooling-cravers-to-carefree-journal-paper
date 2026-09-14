@@ -1,15 +1,5 @@
 # Cooling Cravers to the Carefree: Behavioral archetypes of thermal preference from city-scale longitudinal smartwatch micro-surveys
 
-![Status](https://img.shields.io/badge/Manuscript-In%20preparation-8A1F11)
-![Journal](https://img.shields.io/badge/Target-Building%20%26%20Environment-1F6FEB)
-![Responses](https://img.shields.io/badge/Analyzed-9%2C520%20thermal--preference%20responses-2E7D32)
-![Participants](https://img.shields.io/badge/Participants-104%20of%20106-1F6FEB)
-![Study location](https://img.shields.io/badge/Study%20location-Singapore-EA580C)
-![Focus](https://img.shields.io/badge/Focus-Behavioral%20thermal%20preference-7C3AED)
-![Reproducibility](https://img.shields.io/badge/Figures-Reproducible%20from%20notebook-0F766E)
-
-⌚ 🌡️ ❄️ 🏙️
-
 Public repository for the paper **“Cooling cravers to the carefree: Behavioral archetypes of
 thermal preference from city-scale longitudinal smartwatch micro-surveys,”** prepared for
 *Building and Environment*. The paper asks whether people can be grouped by their
@@ -49,6 +39,10 @@ The foundational dataset should be cited as:
 > crowdsourced smartwatch micro-surveys to capture longitudinal in-situ urban heat and noise
 > perception*. Available at [SSRN: 7407399](https://ssrn.com/abstract=7407399) or
 > [https://doi.org/10.2139/ssrn.7407399](https://doi.org/10.2139/ssrn.7407399).
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/). See [`LICENSE`](./LICENSE) for the full terms.
 
 ## Related publications and research lineage
 
@@ -116,6 +110,7 @@ and [PyMuPDF](https://pymupdf.readthedocs.io/).
 cravers-to-carefree.tex          Manuscript source (Elsevier elsarticle, final,5p,times,twocolumn)
 cravers-to-carefree.bib          Numeric bibliography
 cravers-to-carefree.pdf          Compiled manuscript
+LICENSE                          Creative Commons BY-NC 4.0 license
 elsarticle.cls                   Vendored Elsevier document class
 elsarticle-num.bst               Vendored Elsevier numeric bibliography style
 figures/                         Manuscript-ready PDF figures (see below)
