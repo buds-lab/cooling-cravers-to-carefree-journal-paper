@@ -15,3 +15,7 @@
 # Editor / OS artefacts
 .DS_Store
 .ipynb_checkpoints/
+
+# Python build artefacts
+__pycache__/
+*.py[cod]
