@@ -16,7 +16,18 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{graphicx}
-\usepackage[section]{placeins}
+\usepackage{stfloats} % allow full-width (figure*) floats at page bottom
+% --- Float placement tuning to minimize white space around figures ---
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.72}
+\renewcommand{\dbltopfraction}{0.92}
+\renewcommand{\dblfloatpagefraction}{0.72}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setcounter{dbltopnumber}{2}
 \usepackage{lineno}
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
@@ -45,35 +56,25 @@
 
 \title{Cooling cravers to the carefree: Behavioral archetypes of thermal preference from city-scale longitudinal smartwatch micro-surveys}
 
-% TODO(author): Confirm the author list, affiliations, corresponding author, and emails.
 \author[smu]{Clayton Miller\corref{corresponding}}
 \cortext[corresponding]{Corresponding author}
-\ead{TODO(author): corresponding.email@example.edu}
+\ead{cmiller@smu.edu.sg}
 
-\affiliation[smu]{organization={Singapore Management University},
-             addressline={TODO(author): department or school},
+\affiliation[smu]{organization={College of Integrative Studies, Singapore Management University},
              city={Singapore},
-             postcode={TODO(author): postal code},
+             postcode={179873},
              country={Singapore}}
 
 \begin{abstract}
-% TODO(author): Write a single-paragraph abstract after the final figures and
-% numerical results have been selected. It should cover motivation; the Cozie
-% Singapore deployment and analytical sample; the person-level feature and
-% clustering approach; selected, verified findings; and design implications.
+Thermal comfort in buildings has long been described through physiological and heat-balance models, yet how people actually seek, avoid, and use cooling is more variable than those models predict, especially in warm climates where air conditioning is pervasive.
+This paper asks whether individuals can be grouped by their thermal-preference behavior rather than by physiology alone, using a longitudinal smartwatch micro-survey deployment collected in Singapore with the open-source Cozie platform.
+The analysis draws on 9{,}520 geolocated thermal-preference responses from 104 eligible participants, each paired with a matched outdoor heat index and an environmental-control context defined by the likelihood that the occupied space is air-conditioned.
+Three person-level behaviors, the tendency to prefer cooler conditions, the tendency to prefer warmer conditions, and the sensitivity of cooling demand to outdoor heat, are stabilized with empirical-Bayes shrinkage and clustered into four behavioral archetypes: the Craver, the Captive, the Conventional, and the Carefree.
+Mechanistic scrutiny with cluster-bootstrap confidence intervals shows that two archetypes behave as thermal physiology predicts, with cooling demand that rises with outdoor heat and is relieved by air conditioning, while two are largely decoupled from the physical environment, consistently seeking or forgoing cooling regardless of the heat around them.
+The groups are robust to clustering perturbations and are not explained by wearable physiology or by most stable personal traits, with only personality openness showing a modest association.
+These findings indicate that thermal preference in a warm climate is only partly a physiological response and is substantially behavioral, and they argue for comfort strategies and cooling policies that offer people a genuine choice among low-carbon paths to feeling comfortable.
 \end{abstract}
 
-% Elsevier may request a graphical abstract as a separate file at submission.
-% Keep the environment so the manuscript source retains the template structure.
-% \begin{graphicalabstract}
-% % \includegraphics[width=\textwidth]{figures/graphical_abstract.pdf}
-% \end{graphicalabstract}
-
-% \begin{highlights}
-% \item TODO(author): State the dataset and participant-level behavioural-typology contribution.
-% \item TODO(author): State the verified heat and environmental-control finding.
-% \item TODO(author): State the built-environment or thermal-comfort implication without overstating causality.
-% \end{highlights}
 
 \begin{keyword}
 thermal comfort \sep thermal preference \sep personal comfort \sep wearable sensing \sep ecological momentary assessment \sep behavioural archetypes
@@ -85,22 +86,6 @@ thermal comfort \sep thermal preference \sep personal comfort \sep wearable sens
 \section{Introduction}\label{sec:introduction}
 % ============================================================================
 
-
-% Suggested argument, to be authored and supported with citations:
-% (1) the same ambient conditions can produce heterogeneous comfort judgements;
-% (2) the field needs longitudinal, person-centered evidence that separates
-% behavioural response from exposure and environmental control; (3) smartwatch
-% micro-surveys provide the necessary repeated in-situ observations; and
-% (4) this study develops and scrutinizes a descriptive four-archetype typology.
-%
-% TODO(author): Establish the Building and Environment contribution, distinguish
-% this paper from the companion Cozie Singapore space-characterization paper and
-% the JITAI intervention paper, then state focused research questions.
-
-% Full-width motivating schematic of the many elements shaping thermal preference.
-% NOTE(author): declared here at the start of the Introduction so the full-width
-% float lands at the top of page 2; wording weaves in-text references to
-% Fig.~\ref{fig:thermal-preference-elements} into the prose below.
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/thermal_preference_elements_v15_190mm_1.pdf}
@@ -112,7 +97,7 @@ Characterization of thermal comfort in the built environment has long been domin
 Rooted in heat-balance theory, these models relate metabolic heat production, clothing insulation, air temperature, radiant conditions, humidity, and air movement to a predicted comfort state, drawing on how core and skin temperatures jointly drive thermal sensation \citep{Frank1999-ju}, how circadian phase and the thermoneutral zone set the body's baseline \citep{Krauchi2002-aq, Kingma2012-lm}, and how radiant and solar exposure adds heat that simple air-temperature metrics miss \citep{Halawa2014-ek, Hodder2007-qo}.
 From these inputs, the models predict thermal sensation, satisfaction, and preference, and they remain the backbone of the comfort standards and mechanical systems designed around them \citep{Cheung2019-fs}.
 Newer adaptive formulations extend this picture by recognizing that people stay comfortable across a wider range of conditions than heat-balance theory alone would predict, as behavioral adjustment, expectation, and prior thermal history reshape what feels acceptable \citep{Dear1998-va, Schweiker2020-pw}.
-Even within the same space, individuals differ systematically in thermal sensitivity and response \citep{Rupp2022-lq, Wang2018-aj}, which is one reason identical ambient conditions can produce the heterogeneous preferences illustrated in Figure~\ref{fig:thermal-preference-elements}.
+Even within the same space, individuals differ systematically in thermal sensitivity and response \citep{Rupp2022-lq, Wang2018-aj}.
 To capture this variation directly, personal comfort models learn from an individual's own repeated feedback and physiological signals rather than assuming a population average \citep{Arakawa_Martins2022-vh}.
 Yet both approaches face practical limits.
 Generalized models predict individual thermal sensation correctly only about a third of the time \citep{Cheung2019-fs}, while personal models are difficult to scale because they depend on collecting sustained, labeled data from every occupant \citep{Arakawa_Martins2022-vh}.
@@ -123,7 +108,8 @@ Efforts to connect these models to the broader context that surrounds them, incl
 % TODO(author): Review adaptive comfort, personal comfort models, expectations,
 % alliesthesia, and over-cooling literature.
 
-Given these deficiencies, it is worth looking more closely at the wider set of factors that shape people's thermal experience in cities, which Figure~\ref{fig:thermal-preference-elements} organizes into two broad families.
+Given these deficiencies, it is worth looking more closely at the wider set of factors that shape people's thermal experience in cities. 
+Figure~\ref{fig:thermal-preference-elements} organizes them into two broad families.
 The left side gathers the physical, environmental, and physiological factors that classical models were built to handle but that continue to surprise in their detail and interaction.
 At the environmental scale, real spaces are rarely uniform, and local asymmetries in radiant, surface, and air-movement conditions shape comfort in ways a single room temperature cannot represent \citep{Su2023-tg}, while personally controlled air movement can restore comfort and even cognitive performance at warmer set points \citep{Schiavon2017-fx, Porras-Salazar2024-mo}.
 Closer to the body, near-body heat sources such as laptops \citep{Zhang2014-im}, the insulation and cut of clothing \citep{Havenith2015-yn}, posture \citep{Tikuisis1996-fd}, and physical activity and metabolic rate \citep{Gaesser1975-jn} all shift the balance between heat production and loss.
@@ -240,7 +226,7 @@ Because survey observations are nested within participants and were not experime
 \section{Results}\label{sec:results}
 % =============================================================================
 
-\begin{figure*}[t]
+\begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_S1_archetype_overview.pdf}
   \caption{Overview of the four behavioral thermal-preference archetypes derived in this study (n = 104 participants). From left to right: the Craver (Constant Cool-Seekers; n = 23, 22.1\%), who prefers cooler more often, even in air-conditioned spaces; the Captive (Often Over-Cooled; n = 12, 11.5\%), who prefers warmer more often, especially in air-conditioned spaces; the Conventional (Normatively Responsive; n = 35, 33.7\%), whose prefer-cooler response rises with outdoor heat; and the Carefree (Heat-Unbothered; n = 34, 32.7\%), who most consistently reports no change, even outdoors. Each column shows a representative icon, a schematic line sketch of the archetype's thermal-preference behavior (axes unlabeled), its name and subtitle, its sample size and share of participants, and a one-line behavioral summary.}
@@ -250,9 +236,14 @@ Because survey observations are nested within participants and were not experime
 
 Applying the person-level feature construction and clustering to the 104 eligible participants yields four behavioral thermal-preference archetypes, summarized in Figure~\ref{fig:archetype-overview}.
 The four groups, named the Craver, the Captive, the Conventional, and the Carefree, differ in how often they seek cooling, how often they report being too cold, and how strongly their preferences track outdoor heat.
+Figure~\ref{fig:archetype-overview} summarizes how the four archetypes differ along the three behavioral features, and Figure~\ref{fig:centroid-profiles} quantifies these differences as standardized signatures.
+The Craver, or Constant Cool-Seekers (n = 23, 22.1\%), prefers cooler conditions in roughly 74\% of responses and carries a below-average heat sensitivity, seeking cooling whether or not outdoor heat is high.
+The Captive, or Often Over-Cooled (n = 12, 11.5\%), stands apart through a much higher prefer-warmer rate, near 21\% against only a few percent in the other groups, indicating that this group reports being too cold far more often than any other.
+The Conventional, or Normatively Responsive (n = 35, 33.7\%), the largest group, shows the strongest heat sensitivity, so its prefer-cooler response rises and falls with outdoor heat in the textbook thermoregulatory pattern.
+The Carefree, or Heat-Unbothered (n = 34, 32.7\%), sits below the cohort mean on all three features and reports no change in roughly 77\% of responses, remaining comfortable even outdoors at comparable heat exposure.
 
 
-\begin{figure*}[t]
+\begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/00_D2_pca_silhouette.pdf}
   \caption{Four-archetype clustering diagnostics. The left panel projects the standardized feature space onto its first two principal components; the right panel shows silhouette widths for individual participants, grouped by archetype.}
@@ -271,11 +262,6 @@ Figure~\ref{fig:pca-silhouette} shows that the four groups are well separated in
   \label{fig:centroid-profiles}
 \end{figure}
 
-Figure~\ref{fig:archetype-overview} summarizes how the four archetypes differ along the three behavioral features, and Figure~\ref{fig:centroid-profiles} quantifies these differences as standardized signatures.
-The Craver, or Constant Cool-Seekers (n = 23, 22.1\%), prefers cooler conditions in roughly 74\% of responses and carries a below-average heat sensitivity, seeking cooling whether or not outdoor heat is high.
-The Captive, or Often Over-Cooled (n = 12, 11.5\%), stands apart through a much higher prefer-warmer rate, near 21\% against only a few percent in the other groups, indicating that this group reports being too cold far more often than any other.
-The Conventional, or Normatively Responsive (n = 35, 33.7\%), the largest group, shows the strongest heat sensitivity, so its prefer-cooler response rises and falls with outdoor heat in the textbook thermoregulatory pattern.
-The Carefree, or Heat-Unbothered (n = 34, 32.7\%), sits below the cohort mean on all three features and reports no change in roughly 77\% of responses, remaining comfortable even outdoors at comparable heat exposure.
 
 \subsection{Heat dose-response and environmental-control context}\label{sec:mechanistic-results}
 The four archetypes were derived from behavior alone, so a mechanistic scrutiny examines whether each group behaves as its signature implies once responses are placed back in their thermal and environmental context.
@@ -283,7 +269,7 @@ The scrutiny proceeds through a coherent sequence: how far each group's cooling 
 Throughout, uncertainty is reported as 95\% cluster-bootstrap confidence intervals that resample whole participants, and group contrasts are summarized with distribution-free effect sizes, so that no comparison rests on participant-nested responses being treated as independent.
 Because participants were not assigned to contexts or heat levels, every result is read as descriptive and associational rather than causal.
 
-\begin{figure*}[t]
+\begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_A3_relief_by_context_5cat.pdf}
   \caption{Prefer-cooler responses for each archetype across five probable control contexts, ordered by increasing air-conditioning likelihood (Outdoor with no A/C; Home with maybe A/C; Indoor Other with maybe A/C; Office or Classroom with likely A/C; and Transport with likely A/C), with 95 percent cluster-bootstrap confidence intervals. Each archetype uses a distinct marker in addition to color so the series remain distinguishable in black and white.}
@@ -326,107 +312,133 @@ The upward slope is clearest in the outdoor supergroup, where outdoor heat varie
   \label{fig:heat-coupling}
 \end{figure}
 
-\begin{figure*}[t]
+Figure~\ref{fig:heat-coupling} distills this dose-response into a single heat-coupling value per archetype, the difference in prefer-cooler probability between hot and cooler responses.
+Only the Conventional has a coupling distinguishable from zero, at about $+0.18$ (95\% cluster-bootstrap interval 0.11 to 0.25), while the Craver, Captive, and Carefree sit near zero with intervals that span it, confirming that only one archetype's cooling demand moves with outdoor heat.
+
+\begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_D1_exposure_provoked_comfort.pdf}
   \caption{Outdoor exposure and provoked comfort by archetype. The left panel summarizes participants' outdoor-exposure share; the right panel shows the probability of reporting No Change when observations are both hot and outdoors.}
   \label{fig:exposure-provoked-comfort}
 \end{figure*}
 
+Figure~\ref{fig:exposure-provoked-comfort} asks whether the Heat-Unbothered Carefree simply avoid heat or genuinely tolerate it.
+The left panel shows that outdoor-exposure share is statistically indistinguishable across the four archetypes, near 10 to 11\% for each (Kruskal-Wallis $p = 0.88$), so no group is systematically sheltered from the heat.
+The right panel shows that even when responses are hot or outdoors, the Carefree report no change far more often, in about 76\% of hot responses and 62\% of outdoor responses, against 24\% and 21\% for the Craver, 41\% and 26\% for the Captive, and 45\% and 38\% for the Conventional.
+Read together with their equal exposure, this points to genuine heat tolerance in the Carefree rather than avoidance of hot conditions.
+
+
 \subsection{Robustness and boundary membership}\label{sec:robustness-results}
-% TODO(author): Report strong signature separation alongside the observed
-% seed/subsample/threshold stability results. Interpret these as support for a
-% descriptive continuum discretized into useful archetypes, not a deterministic
-% classifier for new individuals.
-\begin{figure*}[t]
+
+
+\begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_E1_independent_behaviours.pdf}
   \caption{Survey characteristics not used to construct the archetypes. From left to right, panels show the distribution of space type, noise distraction, and alone-versus-group context across the four archetypes.}
   \label{fig:independent-behaviors}
 \end{figure*}
 
-% \begin{figure*}[t]
-%   \centering
-%   \includegraphics[width=\textwidth]{figures/01_E2_clustering_stability.pdf}
-%   \caption{Clustering stability under 90\% participant subsampling. The left panel shows adjusted Rand index values relative to the reference clustering; the right panel shows median archetype-membership retention.}
-%   \label{fig:clustering-stability}
-% \end{figure*}
+Several checks probe whether the four archetypes are a robust behavioral construct rather than an artifact of the clustering.
+The archetypes are strongly separated on the very features that define them, with pairwise Cliff's delta on the prefer-cooler rate approaching its extremes of $\pm1$ between the most distinct groups.
+The archetypes also vary in survey characteristics that were never used in the clustering, namely the mix of space types, noise distraction, and alone-versus-group context, consistent with a genuine behavioral construct rather than a clustering artifact (Figure~\ref{fig:independent-behaviors}).
 
-\begin{figure*}[t]
+\begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/01_E3_hr_and_movement_by_archetype.pdf}
   \caption{Wearable physiology in the one hour before each survey, summarized to one value per participant and compared across the four archetypes. From left to right: resting heart-rate proxy (mean heart rate on low-activity occasions), mean heart rate, within-hour heart-rate standard deviation (all in beats per minute), and movement (steps per hour, drawn on a logarithmic axis because a single participant is far more active). In each panel the box marks the interquartile range and median and the points are individual participants, colored by archetype. Kruskal-Wallis epsilon-squared effect sizes are all below 0.03 and none of the differences is statistically significant, so the archetypes are not distinguished by heart rate or activity.}
   \label{fig:hr-movement}
 \end{figure*}
-\begin{figure*}[t]
+
+By contrast, the archetypes are undifferentiated on wearable physiology in the hour before each survey, with Kruskal-Wallis effect sizes at or below 0.024 for the resting heart-rate proxy, mean heart rate, heart-rate variability, and movement, and none of the differences statistically significant (Figure~\ref{fig:hr-movement}).
+This null is reassuring, because thermal preference is a perceptual and behavioral signal rather than a simple function of heart rate or activity.
+
+\begin{figure*}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/02_B1_openness_vs_null_dimensions.pdf}
   \caption{Onboarding measures by archetype: one candidate signal against representative null dimensions (n = 101 participants with onboarding data). Each panel shows a participant-level measure across the four archetypes as a box (interquartile range and median) with individual participants overlaid, colored by archetype, and is annotated with the Kruskal-Wallis epsilon-squared effect size and p-value. From left to right: Ten-Item Personality Inventory Openness (1 to 7), Satisfaction With Life Scale total (5 to 35), age in years, and body mass index. Openness is the only measure with a medium effect (epsilon-squared 0.137, p = 0.003), higher in the Carefree type, whereas the other dimensions overlap across archetypes.}
   \label{fig:onboarding-openness}
 \end{figure*}
 
+Among stable onboarding traits, only Ten-Item Personality Inventory Openness separates the archetypes at a medium effect size (epsilon-squared 0.137, $p = 0.003$), running highest in the Carefree, while the other personality dimensions, life satisfaction, sensory sensitivity, age, body mass index, years in Singapore, acclimatization, and gender all overlap across groups (Figure~\ref{fig:onboarding-openness}).
+
+The partition itself is stable to reasonable perturbations, reproducing across fifty random seeds with a median adjusted Rand index of 0.94 and under repeated ninety-percent subsampling with a median adjusted Rand index of 0.77.
+It is more sensitive to the choice of heat threshold, with adjusted Rand indices between about 0.47 and 0.65 when the hot-cool split is moved well away from the cohort median, which is expected because that threshold enters the feature construction itself.
+Together these results support reading the archetypes as a useful discretization of a continuous behavioral space rather than a deterministic classifier that would assign every new individual to a fixed type.
+
 % =============================================================================
 \section{Discussion}\label{sec:discussion}
 % =============================================================================
 
-\subsection{What the archetypes add to thermal-comfort research}\label{sec:contribution}
-% TODO(author): Connect each archetype to the field without reifying the labels
-% or assigning traits/causes that were not measured.
+\subsection{Role of behavioral archetypes in thermal comfort research for the built environment}\label{sec:contribution}
+As outlined in the introduction, there is a long history of characterizing how the human body reacts to its thermal environment, from heat-balance models of comfort to the physiology of thermoregulation and cutaneous blood flow \citep{Fanger1972-xq, Johnson2010-eh, Frank1999-ju}.
+This body of work is invaluable for describing, in theory, the conditions under which a person should feel comfortable, yet real-world thermal behavior is consistently more complex than the models predict \citep{Cheung2019-fs, Dear1998-va}.
+The link between what a person's body senses and what that person then decides to do, whether to seek, purchase, or operate cooling, is shaped by expectation, habit, and circumstance as much as by physiology \citep{Schweiker2020-pw, Osunmuyiwa2020-fr, Hitchings2011-eo}.
+The behavioral archetypes recovered here make that gap concrete in a tropical setting.
+Two of the groups behave largely as physiological theory would predict, as the Conventional track outdoor heat in the textbook thermoregulatory pattern \citep{Johnson2010-eh}, and the Captive resemble them but are more sensitive to the cold of air-conditioned interiors, an over-cooling that echoes reports of discomfort in aggressively conditioned tropical buildings \citep{Schiavon2017-fx, Rupp2022-lq}.
+The other two groups are harder to reconcile with the physical environment alone, as the Craver consistently want cooling and the Carefree consistently do not, in each case largely decoupled from outdoor heat and from the controlled settings around them.
+Preferences of this kind are unlikely to be explained by heat balance and instead point to the psychological, cultural, and economic factors on the right side of Figure~\ref{fig:thermal-preference-elements}, from expectation and the pleasantness of a stimulus given internal state \citep{Schweiker2020-pw, Cabanac1971-mg} to the social conventions and material cultures that normalize particular indoor climates \citep{Shove2003-lf, Shove2014-fx, Healy2008-hk}.
+Isolating which of these factors drive the Craver and the Carefree will require field-based, longitudinal studies that combine behavioral measurement with the qualitative and mixed methods better suited to motivation and meaning \citep{Hitchings2011-eo, Strengers2011-bm}.
 
-\subsection{Implications for buildings, controls, and personalization}\label{sec:implications}
-% TODO(author): Discuss design and operation implications at the appropriate
-% evidence level. Separate observations about likely A/C contexts from causal
-% claims about air-conditioning operation.
+\subsection{Implications for the design and operations of buildings}\label{sec:implications}
+These findings speak directly to how buildings are designed and operated, because the conventional approach is largely one-size-fits-all, provisioning a single set point that theory says should satisfy an average occupant \citep{Cheung2019-fs}.
+A more holistic approach would combine several routes to comfort so that occupants can choose what works for them, whether through adaptive operation, personally controlled air movement, or personal comfort systems \citep{Dear1998-va, Schiavon2017-fx, Arakawa_Martins2022-vh}.
+The residential context is where this matters most, since households themselves decide whether to install cooling and how to run it, decisions that respond to income, price, and habit rather than to physiology alone \citep{Davis2015-po, He2022-rg, Yun2011-nu}.
+Air conditioning is a genuinely valuable technology in a warming climate, supporting sleep, health, and daytime productivity \citep{Porras-Salazar2024-mo, Miller2025-ne}, and the existence of the Conventional and Captive groups shows that much cooling demand is a real response to heat.
+The concern is the Craver-like pattern of habitual, heat-independent cooling, which, scaled across a rapidly conditioning tropical belt, carries large consequences for energy use and carbon emissions \citep{Davis2015-po, Colelli2023-fy, Falchetta2024-ao, Zhang2026-cx}.
+Addressing it will require partnering with social scientists and behavioral economists to understand cooling as a practice, and to find a balance between the habitual overuse of air conditioning and its habitual avoidance \citep{Shove2003-lf, Strengers2011-bm, Gillingham2012-nf}.
+Greater thoughtfulness about when and where cooling is installed, together with a broader palette of technologies such as radiant systems, elevated air movement, adaptive clothing, and personal cooling, could deliver comfort to more of these archetypes at a fraction of the energy cost \citep{Halawa2014-ek, Schiavon2017-fx, Havenith2015-yn}.
 
-\subsection{Strengths and limitations}\label{sec:limitations}
-% TODO(author): Address the Singapore cohort, self-selected participants,
-% participant-nested observations, weather-as-proxy limitation, location-context
-% assumptions, response imbalance, post-hoc cluster naming, and soft membership.
+\subsection{Limitations}\label{sec:limitations}
+This work has several limitations that bound how far its findings should be read.
+The environmental-control contexts are defined a priori from the likelihood that a space is air-conditioned, so statements about likely air-conditioned settings describe association with space type and must not be read as causal claims about air-conditioning operation, which was not measured directly.
+The cohort is drawn from a single tropical city and is young and largely self-selected, which limits generalization to other climates, age groups, and cultures \citep{Naheed2021-ce, Karjalainen2012-ag}.
+Because survey observations are nested within participants and were not experimentally assigned, every comparison is descriptive and associational rather than causal.
+Outdoor weather serves as a proxy for each participant's thermal exposure rather than a direct measurement of their immediate microclimate, so indoor conditions and radiant effects are only partially captured \citep{Halawa2014-ek}.
+The location and control-context assignments rest on self-reported space type and on the assumption that Singapore offices, classrooms, and transport are reliably air-conditioned, which holds in aggregate but not for every response.
+The response distribution is imbalanced, with prefer-warmer votes especially rare, so the smaller archetypes such as the Captive are estimated with wider uncertainty.
+Finally, the archetype names are descriptive labels applied after clustering, and membership is soft near the boundaries, so the four groups should be read as an interpretable discretization of a continuous behavioral space rather than as fixed types.
 
 \subsection{Future work}\label{sec:future-work}
-% TODO(author): Consider replication in other climates/cohorts, independent
-% validation, direct indoor environmental measurements, longitudinal change in
-% preferences, and designs that can evaluate causal control interventions.
+Several directions would strengthen and extend this line of work.
+The most important is replication in other climates and cohorts, with independent validation of whether a similar set of archetypes emerges beyond a young tropical sample \citep{Naheed2021-ce}.
+Pairing the wearable micro-surveys with direct indoor environmental measurements, including air and radiant temperature and personal exposure, would remove the reliance on outdoor weather as a proxy and sharpen the environmental-control contrasts \citep{Halawa2014-ek}.
+Following participants over longer periods would show whether archetype membership is stable or whether preferences drift as expectations and thermal history change \citep{Schweiker2020-pw, Dear1998-va}.
+Moving beyond association will require designs that can evaluate causal control interventions, for example just-in-time adaptive interventions that nudge cooling behavior and measure the response \citep{Miller2025-sv}.
+Explaining why the Craver and the Carefree diverge will ultimately depend on integrating the psychological, cultural, and economic disciplines represented on the right side of Figure~\ref{fig:thermal-preference-elements}, through the kind of mixed-methods collaboration that behavioral and social science bring \citep{Shove2003-lf, Strengers2011-bm, Gillingham2012-nf}.
 
 % =============================================================================
 \section{Conclusions}\label{sec:conclusions}
 % =============================================================================
-% TODO(author): Concisely restate the dataset, typology, verified headline
-% patterns, and the calibrated implication for personal thermal comfort and
-% built-environment design.
+This study used a longitudinal smartwatch micro-survey deployment in Singapore, comprising 9{,}520 geolocated thermal-preference responses from 104 eligible participants, to derive a behavioral typology of thermal preference.
+Clustering three person-level behaviors, the tendency to prefer cooler conditions, the tendency to prefer warmer conditions, and the sensitivity of cooling demand to outdoor heat, yielded four archetypes: the Craver, the Captive, the Conventional, and the Carefree.
+Mechanistic scrutiny showed that two of these archetypes behave as thermal physiology would predict, with cooling demand that tracks outdoor heat and is relieved by air conditioning, while the other two are largely decoupled from the physical environment, consistently seeking or forgoing cooling regardless of the heat around them.
+These patterns are robust to reasonable perturbations of the clustering and are not explained by wearable physiology or by most stable personal traits, with only personality openness showing a modest association.
+Taken together, they show that thermal preference in a warm climate is only partly a physiological response and is substantially a matter of behavior, expectation, and habit, which argues for comfort strategies and cooling policies that give people a genuine choice among low-carbon paths to feeling comfortable.
 
 % =============================================================================
 \section*{CRediT authorship contribution statement}
-
 % =============================================================================
-\section*{CRediT authorship contribution statement}
-% =============================================================================
-% TODO(author): Replace with the final contributor roles agreed by all authors.
-\textit{CRediT roles to be finalized by the authors.}
+Clayton Miller: Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Resources, Writing -- original draft, Writing -- review \& editing, Visualization, Supervision, Project administration, Funding acquisition.
 
 \section*{Declaration of competing interest}
-% TODO(author): Replace with the final journal-compliant declaration.
-The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+The author declares that he has no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
 \section*{Acknowledgments}
-% TODO(author): Add funders, institutional support, data-collection collaborators,
-% and any required grant identifiers after confirming their wording.
+The author acknowledges Mario Frei and Yun Xuan Chua for their contributions to the conceptualization, methodology, deployment, validation, and data curation of the Cozie Singapore study that provided the foundation for this analysis.
+The author also acknowledges the student researchers who assisted with data collection and processing: Charis Boey, Kristi Maisha, Annabel Sim, Aisyah Iskandar, Lum Jun Chao, and S Aravindkugesh.
 
 \section*{Data availability}
-% TODO(author): Replace with the persistent public dataset/repository DOI or URL
-% at the point of submission. Do not include private participant information.
-The data and analysis materials will be made available in the associated public repository, subject to the privacy protections described in the accompanying data documentation.
+The manuscript source, analysis documentation, and publication figures for this paper are available at \url{https://github.com/buds-lab/cooling-cravers-to-carefree-journal-paper}.
+The analysis draws on two public data sources linked by pseudonymous participant identifiers.
+The privacy-protected Cozie Singapore survey-level dataset, which contains the smartwatch micro-survey responses, matched outdoor weather, and wearable-health aggregates used to construct the thermal-preference archetypes, is available at \url{https://github.com/buds-lab/cozie-singapore-journal}.
+The onboarding dataset used to examine participant demographics, personality traits, life satisfaction, sensory sensitivity, and acclimatization is available in the Make Yourself Comfortable repository at \url{https://github.com/buds-lab/make-yourself-comfortable-jitai-journal-paper}.
+Both source repositories provide their own data documentation and privacy notes, and no private participant information is included in this manuscript repository.
 
 \section*{Declaration of generative AI and AI-assisted technologies in the writing process}
-% TODO(author): Retain, revise, or remove to match Elsevier's current declaration
-% policy at submission and the authors' actual use.
-During the preparation of this work, the authors used generative AI tools to assist with organizing and polishing manuscript source files.
-The authors reviewed and edited all content and take full responsibility for the final manuscript.
+During the preparation of this work, the author used Runcell AI (Version 0.1.25), an AI coding and writing assistant built on the GPT-5.6 Terra (OpenAI) and Claude Opus 4.8 (Anthropic) large language models, to help organize and format the \LaTeX{} manuscript, arrange figure and table placement, and copy-edit text written by the author.
+The tools were not used to generate or analyze the study data, nor to create or alter any figure, its underlying values, or the reported results.
+All AI-assisted output was reviewed, edited, and verified by the author, who takes full responsibility for the originality, accuracy, integrity, citations, and final content of this manuscript.
 
-\appendix
-\section{Supplementary methods and robustness detail}\label{app:methods}
-% TODO(author): Move expanded technical material here only if it supports the
-% main text and is not better supplied as separate supplementary material.
 
 \bibliographystyle{elsarticle-num}
 \bibliography{cravers-to-carefree}
