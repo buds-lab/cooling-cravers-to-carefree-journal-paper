@@ -221,16 +221,6 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error cravers-to-carefree.tex
 Numbers within a bracket are sorted automatically; verify every key against the current `.bbl`
 after bibliography changes.
 
-## Reproducibility checklist
-
-Before committing a manuscript update:
-
-1. Verify every reported number against executed analysis output.
-2. Rebuild the manuscript after changing the source, bibliography, or any figure.
-3. Confirm that all citations and cross-references resolve.
-4. Inspect the compiled PDF for figure placement, clipping, and excessive whitespace.
-5. If bibliography order changes, regenerate and inspect Figure 1 before rebuilding.
-
 ## Contributions and acknowledgments
 
 Clayton Miller (College of Integrative Studies, Singapore Management University) is the sole
