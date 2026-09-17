@@ -27,11 +27,12 @@ the two source repositories listed below.
 
 ## How to cite
 
-This manuscript is in preparation. Until a DOI is assigned, please cite it as:
+Please cite this paper as:
 
-> Miller, C. (2026). *Cooling cravers to the carefree: Behavioral archetypes of thermal
-> preference from city-scale longitudinal smartwatch micro-surveys*. Manuscript in
-> preparation. https://github.com/buds-lab/cooling-cravers-to-carefree-journal-paper
+> Miller, Clayton. *Cooling cravers to the carefree: Behavioral archetypes of thermal
+> preference from city-scale longitudinal smartwatch micro-surveys* (September 14, 2026).
+> Available at [SSRN: 7457562](https://ssrn.com/abstract=7457562) or
+> [https://doi.org/10.2139/ssrn.7457562](https://doi.org/10.2139/ssrn.7457562).
 
 The foundational dataset should be cited as:
 
@@ -62,7 +63,7 @@ intervention outcomes.
 | 2025 | **The Cool, Quiet City machine learning competition: Overview and results** — Miller, Ibrahim, Akbar, Picchetti, Chua, Frei, Biljecki, Chong, Quintana, Fu. *J. Phys.: Conf. Ser.* **3140** 112017. | Reports the design and results of that competition. | [10.1088/1742-6596/3140/11/112017](https://doi.org/10.1088/1742-6596/3140/11/112017) |
 | 2025 | **Make yourself comfortable: Nudging urban heat and noise mitigation with smartwatch-based Just-in-time Adaptive Interventions (JITAI)** — Miller, Chua, Quintana, Lei, Biljecki, Frei. *Building and Environment* **284** 113388. | Reports the JITAI **intervention outcomes** of the deployment; also the source of this paper's onboarding measures. [Repository](https://github.com/buds-lab/make-yourself-comfortable-jitai-journal-paper). | [10.1016/j.buildenv.2025.113388](https://doi.org/10.1016/j.buildenv.2025.113388) |
 | 2026 | **Cozie Singapore: Scalable crowdsourced smartwatch micro-surveys to capture longitudinal in-situ urban heat and noise perception** — Miller, Frei, Chua. *SSRN preprint*. | Characterizes the **reported experience across urban spaces**; the source of this paper's survey dataset. [Repository](https://github.com/buds-lab/cozie-singapore-journal). | [10.2139/ssrn.7407399](https://doi.org/10.2139/ssrn.7407399) |
-| 2026 | **Cooling cravers to the carefree** *(this paper)* — Miller. Manuscript in preparation. | Reanalyzes the same deployment at the **person level**, deriving behavioral thermal-preference archetypes. | — |
+| 2026 | **Cooling cravers to the carefree** *(this paper)* — Miller. *SSRN preprint*. | Reanalyzes the same deployment at the **person level**, deriving behavioral thermal-preference archetypes. | [10.2139/ssrn.7457562](https://doi.org/10.2139/ssrn.7457562) |
 
 > **Relationship to the source studies.** *Cozie Singapore* and *Make yourself comfortable*
 > analyze the deployment at the level of **spaces** and **interventions**, respectively. This
