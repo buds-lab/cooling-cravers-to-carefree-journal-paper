@@ -6,8 +6,8 @@ thermal preference from city-scale longitudinal smartwatch micro-surveys,”** p
 thermal-preference **behavior** rather than by physiology alone, using a longitudinal
 Cozie-Apple smartwatch micro-survey deployment collected in Singapore.
 
-The analysis draws on **9,520 geolocated thermal-preference responses from 104 eligible
-participants** (of the 106-participant deployment), each paired with a matched outdoor heat
+The analysis draws on **9,358 geolocated thermal-preference responses from 104 eligible
+participants** (of the 106-participant, 9,520-response deployment), each paired with a matched outdoor heat
 index and an environmental-control context defined by how likely the occupied space is to be
 air-conditioned. Three person-level behaviors — the tendency to prefer cooler conditions, the
 tendency to prefer warmer conditions, and the sensitivity of cooling demand to outdoor heat —
@@ -16,7 +16,7 @@ are stabilized with empirical-Bayes shrinkage and clustered into four behavioral
 | Archetype | Mnemonic | Share | Behavior in one line |
 |:----------|:---------|:------|:---------------------|
 | Constant Cool-Seekers | **Craver** | 22.1% | Prefers cooler more often, even in air-conditioned space |
-| Often Over-Cooled | **Captive** | 11.5% | Prefers warmer more often, especially where others control the A/C |
+| Often Over-Cooled | **Captive** | 11.5% | Prefers warmer more often, especially in likely air-conditioned offices and classrooms |
 | Normatively Responsive | **Conventional** | 33.7% | Cooling demand rises with outdoor heat, as physiology predicts |
 | Heat-Unbothered | **Carefree** | 32.7% | Reports "no change" most consistently, even outdoors |
 
@@ -75,18 +75,20 @@ intervention outcomes.
 ## Key findings
 
 - **Thermal preference is substantially behavioral.** Four archetypes emerge from behavior
-  alone; two (*Conventional*, *Craver*) behave as thermal physiology predicts, while two
-  (*Captive*, *Carefree*) are largely decoupled from the outdoor heat around them.
+  alone; only the *Conventional* show cooling demand that rises with outdoor heat (heat
+  coupling ≈ +0.18), while the *Craver*, *Captive*, and *Carefree* are statistically decoupled
+  from it.
 - **Air conditioning relieves some but not all.** Prefer-cooler responses fall as spaces
   become more likely air-conditioned for most groups, but the *Craver* keeps seeking cooler
   even in cooled space.
-- **Over-cooling is contextual.** The *Captive*'s "too cold" votes concentrate in
-  likely-air-conditioned spaces controlled by others, not in the weather.
+- **Over-cooling is concentrated in one group.** The *Captive* prefer warmer in about 14–28% of
+  responses against 1–7% for the others, peaking in likely-air-conditioned offices and
+  classrooms (28%), though the context gradient is uncertain in this group of twelve.
 - **Genuine tolerance, not avoidance.** The *Carefree* stays comfortable even when hot and
   outdoors, so their contentment is not an artifact of low heat exposure.
 - **Not a physiological or trait artifact.** The archetypes are undifferentiated on wearable
   physiology and on most stable onboarding traits; only personality **openness** shows a
-  modest association (Kruskal–Wallis ε² = 0.137, *p* = 0.003), running highest in the
+  moderate association (Kruskal–Wallis ε² = 0.137, *p* = 0.003), running highest in the
   *Carefree*.
 - **Robust but soft-edged.** The four-way partition is seed-stable (adjusted Rand index ≈ 0.94)
   and reproduces under subsampling (≈ 0.77), with softer boundary membership as the hot/cool
